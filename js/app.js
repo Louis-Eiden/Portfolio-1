@@ -1,8 +1,48 @@
 /* --------------- Grab elements from DOM --------------- */
 
 const header = document.querySelector("header");
-
 const navbar = document.querySelector(".navbar");
+
+const first_skill = document.querySelector(".skill:first-child");
+const sk_counter = document.querySelectorAll(".counter span");
+const progress_bars = document.querySelectorAll(".skills svg circle");
+
+const ml_section = document.querySelector(".milestones");
+const ml_counters = document.querySelectorAll(".number span");
+
+const prt_section = document.querySelector(".portfolio");
+const zoom_icons = document.querySelectorAll(".zoom-icon");
+const modal_overlay = document.querySelector(".modal-overlay");
+const images = document.querySelectorAll(".images img");
+
+/* --------------- Event Listeners --------------- */
+
+window.addEventListener("scroll", () => {
+  if (!skillsPlayed) skillsCounter();
+  if (!mlPlayed) mlCounter();
+});
+
+/* --------------- Utils --------------- */
+
+// Check if element has reached the bottom of the viewport
+function hasReached(el) {
+  let topPosition = el.getBoundingClientRect().top;
+
+  if (window.innerHeight >= topPosition + el.offsetHeight) return true;
+  return false;
+}
+
+// Update the counter by 1 until it reaches the target number
+function updateCount(num, maxNum) {
+  let currentNum = +num.innerText;
+
+  if (currentNum < maxNum) {
+    num.innerText = currentNum + 1;
+    setTimeout(() => {
+      updateCount(num, maxNum);
+    }, 12);
+  }
+}
 
 /* --------------- Sticky Navbar --------------- */
 
@@ -26,11 +66,79 @@ sr.reveal(".showcase-image", { origin: "top", delay: 700 });
 
 /* --------------- Skills Progress Bar Animation --------------- */
 
+let skillsPlayed = false;
+
+// Animate the progress bar
+function skillsCounter() {
+  if (!hasReached(first_skill)) return;
+
+  skillsPlayed = true;
+
+  sk_counter.forEach((c, i) => {
+    let target = +c.dataset.target;
+    let strokeValue = 427 - 427 * (target / 100);
+
+    progress_bars[i].style.setProperty("--target", strokeValue);
+
+    setTimeout(() => {
+      updateCount(c, target);
+    }, 400);
+  });
+
+  progress_bars.forEach(
+    (p) => (p.style.animation = "progress 2s ease-in-out forwards")
+  );
+}
+
 /* --------------- Services Counter Animation --------------- */
+
+let mlPlayed = false;
+
+function mlCounter() {
+  if (!hasReached(ml_section)) return;
+  mlPlayed = true;
+  ml_counters.forEach((c) => {
+    let target = +c.dataset.target;
+
+    setTimeout(() => {
+      updateCount(c, target);
+    }, 400);
+  });
+}
 
 /* --------------- Portfolio Filter Animation --------------- */
 
+let mixer = mixitup(".portfolio-gallery", {
+  selectors: {
+    target: ".prt-card",
+  },
+  animation: {
+    duration: 500,
+  },
+});
+
 /* --------------- Modal Pop Up Animation Animation --------------- */
+
+let currentIndex = 0;
+
+zoom_icons.forEach((icon, i) =>
+  icon.addEventListener("click", () => {
+    prt_section.classList.add("open");
+    document.body.classList.add("stopScrolling");
+    currentIndex = i;
+    changeImage(currentIndex);
+  })
+);
+
+modal_overlay.addEventListener("click", () => {
+  prt_section.classList.remove("open");
+  document.body.classList.remove("stopScrolling");
+});
+
+function changeImage(index) {
+  images.forEach((img) => img.classList.remove("showImage"));
+  images[index].classList.add("showImage");
+}
 
 /* --------------- Modal Pop Up Animation Animation --------------- */
 

@@ -51,6 +51,11 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+body.stopScrolling {
+  height: 100%;
+  overflow: hidden;
+}
+
 ::selection {
   background-color: hsla(var(--hue-1), 100%, 60%, 0.9);
   color: #fff;
@@ -63,6 +68,80 @@ a {
 ul {
   list-style: none;
 }
+
+/* shapes */
+
+/* .showcase-area .circle {
+  position: absolute;
+  width: 190px;
+  top: 80%;
+  left: 0;
+  transform: translate(-50%, -50%);
+}
+
+.showcase-area .dots {
+  position: absolute;
+  top: 30%;
+  left: 100%;
+  transform: translate(-50%, -50%);
+}
+
+.showcase-area .square {
+  position: absolute;
+  left: 25%;
+  bottom: 120px;
+  transform: translate(-50%, -50%);
+}
+
+.about .triangle {
+  position: absolute;
+  top: 27%;
+  left: 90%;
+  transform: translate(50%, -50%);
+}
+
+.skills .dots {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+.skills .square {
+  position: absolute;
+  top: 75%;
+  left: 100%;
+  transform: translate(-50%, -50%);
+}
+
+.services .triangle {
+  position: absolute;
+  top: 100%;
+  left: 30%;
+  transform: translate(-50%, -100%);
+}
+
+.services .square {
+  position: absolute;
+  top: 75%;
+  left: -15px;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+.dots {
+  width: 112px;
+}
+
+.square {
+  width: 70px;
+}
+
+.triangle {
+  width: 95px;
+  opacity: 0.18;
+} */
 
 /* --------------- Reusable CSS Code --------------- */
 
@@ -78,7 +157,6 @@ ul {
   position: relative;
   padding: var(--section-padding) 0;
   width: 100%;
-  height: 100vh;
   overflow: hidden;
 }
 
@@ -139,6 +217,8 @@ ul {
   color: #fff;
   font-size: 0.85rem;
   letter-spacing: 0.4px;
+  min-width: 125px;
+  text-align: center;
   text-transform: capitalize;
   transition: var(--time-1);
 }
@@ -157,6 +237,7 @@ ul {
   border-bottom: 2.5px solid var(--main-color-2);
   border-radius: 0;
   padding: 0.15rem 0;
+  min-width: revert;
 }
 
 .btn.secondary-btn::before {
@@ -174,17 +255,15 @@ ul {
   width: 100%;
 }
 
-.dots {
-  width: 112px;
+.btn.secondary-btn.sm {
+  padding: 0.07rem 0.1rem;
+  font-size: 0.78rem;
+  border-bottom-width: 2px;
 }
 
-.square {
-  width: 70px;
-}
-
-.triangle {
-  width: 95px;
-  opacity: 0.18;
+.btn.secondary-btn.sm::before {
+  height: 2px;
+  bottom: -2px;
 }
 
 /* --------------- Navbar Styling --------------- */
@@ -294,7 +373,7 @@ header.scrolled .logo {
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  position: relative;
+  /* position: relative; */
 }
 
 .showcase-area .container {
@@ -338,28 +417,6 @@ header.scrolled .logo {
   left: 50%;
   transform: translateX(-50%);
   border-radius: 0 0 80px 80px;
-}
-
-.showcase-area .circle {
-  position: absolute;
-  width: 190px;
-  top: 80%;
-  left: 0;
-  transform: translate(-50%, -50%);
-}
-
-.showcase-area .dots {
-  position: absolute;
-  top: 30%;
-  left: 100%;
-  transform: translate(-50%, -50%);
-}
-
-.showcase-area .square {
-  position: absolute;
-  left: 25%;
-  bottom: 120px;
-  transform: translate(-50%, -50%);
 }
 
 /* --------------- About Section Styling --------------- */
@@ -461,13 +518,6 @@ header.scrolled .logo {
   opacity: 0.07;
 }
 
-.about .triangle {
-  position: absolute;
-  top: 27%;
-  left: 90%;
-  transform: translate(50%, -50%);
-}
-
 /* --------------- Skills Section Styling --------------- */
 
 .skills {
@@ -479,6 +529,7 @@ header.scrolled .logo {
   padding: 5rem 6rem;
   border-radius: 20px;
   width: 100%;
+  /* position: relative; */
 }
 
 .box-desc {
@@ -488,9 +539,356 @@ header.scrolled .logo {
   column-gap: 2rem;
 }
 
+.skills-wrap {
+  display: grid;
+  grid-template-columns: repeat(4, 150px);
+  margin-top: 2rem;
+  justify-content: space-between;
+}
+
+.skill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.sk-progress {
+  width: 150px;
+  height: 150px;
+  position: relative;
+}
+
+.sk-progress svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-90deg);
+}
+
+.sk-progress svg circle {
+  fill: var(--bg-color-3);
+  stroke-width: 5px;
+  stroke: var(--main-color-1);
+  stroke-linecap: round;
+  stroke-dasharray: 427;
+  stroke-dashoffset: 427;
+}
+
+@keyframes progress {
+  to {
+    stroke-dashoffset: var(--target);
+  }
+}
+
+.counter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  color: var(--heading-color);
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.counter span {
+  font-size: 2.45rem;
+}
+
+.sk-title {
+  color: var(--heading-color);
+  font-size: 1rem;
+  font-weight: 400;
+  margin-top: 0.75rem;
+}
+
 /* --------------- Sevices Section Styling --------------- */
 
+.services .container {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  column-gap: 2rem;
+  align-items: center;
+}
+
+.milestones {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  text-align: center;
+  justify-items: flex-start;
+}
+
+.milestones h2 {
+  color: var(--heading-color);
+  font-size: 1.3rem;
+}
+
+.milestones h2 span {
+  font-size: 2rem;
+  line-height: 1.2;
+  margin-right: 0.1rem;
+}
+
+.milestones h5 {
+  color: var(--heading-color);
+  line-height: 0.9;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 2rem;
+  row-gap: 4.4rem;
+  position: relative;
+}
+
+.srv-card {
+  background-color: var(--bg-color-2);
+  border-radius: 15px;
+  padding: 2.5rem 2.1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  min-height: 280px;
+}
+
+.srv-card h3 {
+  color: var(--heading-color);
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+.srv-card .text {
+  margin: 0.7rem 0;
+  font-size: 0.7rem;
+}
+
+.srv-card:nth-child(2) {
+  transform: translateY(2.2rem);
+}
+
+.srv-card:nth-child(3) {
+  transform: translateY(-2.2rem);
+}
+
+.services-grid::before {
+  content: "";
+  position: absolute;
+  width: 210px;
+  height: 210px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 15px solid var(--main-color-1);
+  z-index: -1;
+  opacity: 0.07;
+}
+
 /* --------------- Portfolio Section Styling --------------- */
+
+.portfolio .container {
+  transition: 0.4s;
+}
+
+.portfolio-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 4rem;
+}
+
+.portfolio-title {
+  padding-bottom: 1rem;
+}
+
+.filter-btn {
+  display: inline-block;
+  color: var(--heading-color);
+  background: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  margin-left: 1.3rem;
+  font-family: inherit;
+  text-transform: uppercase;
+}
+
+.filter-btn.mixitup-control-active {
+  color: var(--main-color-1);
+}
+
+.portfolio-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.prt-card {
+  height: 265px;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  border-radius: 15px;
+  overflow: hidden;
+  background-color: var(--bg-color-2);
+  cursor: pointer;
+}
+
+.prt-image {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.prt-image img {
+  width: 105%;
+}
+
+.prt-desc {
+  padding: 1.1rem 1.6rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.prt-desc h3 {
+  color: var(--heading-color);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.prt-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  backdrop-filter: blur(0px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  transition: var(--time-2);
+}
+
+.prt-image:hover .prt-overlay {
+  background-color: var(--bg-color-transparent);
+  backdrop-filter: blur(10px);
+  pointer-events: auto;
+}
+
+.prt-icon {
+  font-size: 1.1rem;
+  color: var(--heading-color);
+  margin: 0 0.4rem;
+  background-color: var(--main-color-2);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transform: translateY(15px);
+  opacity: 0;
+  transition: var(--time-1);
+}
+
+.prt-icon:hover {
+  background-color: var(--main-color-dark-2);
+}
+
+.prt-image:hover .prt-icon {
+  opacity: 1;
+  transform: translateY(0px);
+  transition: var(--time-1) var(--i);
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 11;
+  pointer-events: none;
+}
+
+.modal-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  opacity: 0;
+  transition: var(--time-1);
+}
+
+.slider-wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, calc(-50% + 400px));
+  width: 90%;
+  max-width: 900px;
+  display: grid;
+  grid-template-columns: 100px 1fr 100px;
+  align-items: center;
+  justify-items: center;
+  opacity: 0;
+  transition: 0.2s;
+}
+
+.slider-wrap img {
+  width: 100%;
+  display: none;
+  border-radius: 10px;
+}
+
+.navigation {
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 2rem;
+}
+
+.slider-wrap img.showImage {
+  display: block;
+}
+
+.portfolio.open .modal {
+  pointer-events: auto;
+}
+
+.portfolio.open .modal-overlay {
+  opacity: 1;
+}
+
+.portfolio.open .container {
+  transform: scale(0.9);
+}
+
+.portfolio.open .slider-wrap {
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  transition: 0.45s 0.1s;
+}
 
 /* --------------- Testimonials Section Styling --------------- */
 
