@@ -5,22 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Louis Portfolio Website</title>
-
     <!-- --------- Scroll Reveal Library --------- -->
     <script src="https://unpkg.com/scrollreveal"></script>
-
     <!-- --------- Swiper Library --------- -->
     <link
       rel="stylesheet"
       href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
     />
-
     <!-- --------- Unicons Icons --------- -->
     <link
       rel="stylesheet"
       href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
     />
-
     <!-- --------- CSS Files --------- -->
     <link rel="stylesheet" href="./css/style.css" />
   </head>
@@ -724,6 +720,7 @@
       </section>
       <!-- --------- Portfolio Section --------- -->
       <section class="portfolio section">
+        <!-- Modal Slideshow -->
         <div class="modal">
           <div class="modal-overlay"></div>
           <div class="slider-wrap">
@@ -731,18 +728,35 @@
               <i class="uil uil-angle-left-b"></i>
             </div>
             <div class="images">
-              <img src="./assets/port1.jpg" class="showImage" alt="" />
-              <img src="./assets/port1.jpg" alt="" />
-              <img src="./assets/port1.jpg" alt="" />
-              <img src="./assets/port1.jpg" alt="" />
-              <img src="./assets/port1.jpg" alt="" />
-              <img src="./assets/port1.jpg" alt="" />
+              <!-- WorldTales -->
+              <img
+                src="./assets/port1.jpg"
+                class="prt-1-img showImage"
+                alt=""
+              />
+              <img src="./assets/port2.png" class="prt-1-img" alt="" />
+              <!-- Hangman -->
+              <img src="./assets/port3.jpg" class="prt-2-img" alt="" />
+              <img src="./assets/port4.png" class="prt-2-img" alt="" />
+              <!-- Schwimmschule -->
+              <img src="./assets/port5.png" class="prt-3-img" alt="" />
+              <img src="./assets/port6.jpg" class="prt-3-img" alt="" />
+              <!-- Network -->
+              <img src="./assets/port1.jpg" class="prt-4-img" alt="" />
+              <img src="./assets/port1.jpg" class="prt-4-img" alt="" />
+              <!-- E-Mail -->
+              <img src="./assets/port1.jpg" class="prt-5-img" alt="" />
+              <img src="./assets/port1.jpg" class="prt-5-img" alt="" />
+              <!-- Templates -->
+              <img src="./assets/port1.jpg" class="prt-6-img" alt="" />
+              <img src="./assets/port1.jpg" class="prt-6-img" alt="" />
             </div>
             <div class="next-btn navigation">
               <i class="uil uil-angle-right-b"></i>
             </div>
           </div>
         </div>
+        <!-- Portfolio projects -->
         <div class="container">
           <div class="portfolio-header">
             <div class="portfolio-title">
@@ -760,7 +774,8 @@
             </div>
           </div>
           <div class="portfolio-gallery">
-            <div class="mix prt-card web">
+            <!-- First Project -->
+            <div class="mix prt-card prt-1 web">
               <div class="prt-image">
                 <img src="./assets/port1.jpg" alt="" />
                 <div class="prt-overlay">
@@ -777,10 +792,10 @@
                 <a href="#" class="btn secondary-btn">Read more</a>
               </div>
             </div>
-
-            <div class="mix prt-card web">
+            <!-- Second Project -->
+            <div class="mix prt-card prt-2 web">
               <div class="prt-image">
-                <img src="./assets/port1.jpg" alt="" />
+                <img src="./assets/port3.jpg" alt="" />
                 <div class="prt-overlay">
                   <span class="prt-icon zoom-icon" style="--i: 0s">
                     <i class="uil uil-search-plus"></i>
@@ -795,10 +810,10 @@
                 <a href="#" class="btn secondary-btn sm">Read more</a>
               </div>
             </div>
-
-            <div class="mix prt-card web">
+            <!-- Third Project -->
+            <div class="mix prt-card prt-3 web">
               <div class="prt-image">
-                <img src="./assets/port1.jpg" alt="" />
+                <img src="./assets/port5.png" alt="" />
                 <div class="prt-overlay">
                   <span class="prt-icon zoom-icon" style="--i: 0s">
                     <i class="uil uil-search-plus"></i>
@@ -813,8 +828,8 @@
                 <a href="#" class="btn secondary-btn sm">Read more</a>
               </div>
             </div>
-
-            <div class="mix prt-card web">
+            <!-- Fourth Project -->
+            <div class="mix prt-card prt-4 web">
               <div class="prt-image">
                 <img src="./assets/port1.jpg" alt="" />
                 <div class="prt-overlay">
@@ -831,8 +846,8 @@
                 <a href="#" class="btn secondary-btn sm">Read more</a>
               </div>
             </div>
-
-            <div class="mix prt-card web">
+            <!-- Fifth Project -->
+            <div class="mix prt-card prt-5 web">
               <div class="prt-image">
                 <img src="./assets/port1.jpg" alt="" />
                 <div class="prt-overlay">
@@ -849,8 +864,8 @@
                 <a href="#" class="btn secondary-btn sm">Read more</a>
               </div>
             </div>
-
-            <div class="mix prt-card design">
+            <!-- Sixth Project -->
+            <div class="mix prt-card prt-6 design">
               <div class="prt-image">
                 <img src="./assets/port1.jpg" alt="" />
                 <div class="prt-overlay">
@@ -871,11 +886,107 @@
         </div>
       </section>
       <!-- --------- Testimonials Section --------- -->
-      <section style="height: 1000px"></section>
-
+      <section class="testimonials section">
+        <div class="container">
+          <div class="section-background">
+            <img src="./assets/person2.png" alt="" class="person" />
+            <!-- <img src="./assets/circle2.png" alt="" class="circle" /> -->
+            <!-- <img src="./assets/square1.png" alt="" class="circle" /> -->
+          </div>
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              <!-- Fist Review -->
+              <div class="swiper-slide">
+                <div class="client">
+                  <img src="./assets/testi1.png" alt="" />
+                  <div class="client-info">
+                    <h4>Mona Handja</h4>
+                    <h5>
+                      Swimming school owner <a href="#">mona@email.com</a>
+                    </h5>
+                  </div>
+                </div>
+                <q class="text">
+                  I am very satisfied with the website. It is very easy to use
+                  and I can manage everything myself. I can recommend it to
+                  everyone.
+                </q>
+              </div>
+              <!-- Second Review -->
+              <div class="swiper-slide">
+                <div class="client">
+                  <img src="./assets/testi2.png" alt="" />
+                  <div class="client-info">
+                    <h4>Mona Handja</h4>
+                    <h5>
+                      Swimming school owner <a href="#">mona@email.com</a>
+                    </h5>
+                  </div>
+                </div>
+                <q class="text">
+                  I am very satisfied with the website. It is very easy to use
+                  and I can manage everything myself. I can recommend it to
+                  everyone.
+                </q>
+              </div>
+              <!-- Third Review -->
+              <div class="swiper-slide">
+                <div class="client">
+                  <img src="./assets/testi3.png" alt="" />
+                  <div class="client-info">
+                    <h4>Mona Handja</h4>
+                    <h5>
+                      Swimming school owner <a href="#">mona@email.com</a>
+                    </h5>
+                  </div>
+                </div>
+                <q class="text">
+                  I am very satisfied with the website. It is very easy to use
+                  and I can manage everything myself. I can recommend it to
+                  everyone.
+                </q>
+              </div>
+              <!-- Fourth Review -->
+              <div class="swiper-slide">
+                <div class="client">
+                  <img src="./assets/testi4.png" alt="" />
+                  <div class="client-info">
+                    <h4>Mona Handja</h4>
+                    <h5>
+                      Swimming school owner <a href="#">mona@email.com</a>
+                    </h5>
+                  </div>
+                </div>
+                <q class="text">
+                  I am very satisfied with the website. It is very easy to use
+                  and I can manage everything myself. I can recommend it to
+                  everyone.
+                </q>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+          <div class="testimonials-title">
+            <h3 class="sub-heading">Testimonials</h3>
+            <h1 class="heading">Hear from my happy clients</h1>
+          </div>
+        </div>
+      </section>
       <!-- --------- Contact Section --------- -->
-
+      <section class="contact section">
+        <div class="container">
+          <div class="contact-info">
+            <h3 class="sub-heading">Contact me</h3>
+            <h1 class="heading">Let's work together</h1>
+            <p class="text"></p>
+            <a href="mailto:eidenlouis.mt@gmail.com" class="mail"
+              >louiseiden.mt@gmail.com <i class="uil uil-arrow-right"></i
+            ></a>
+          </div>
+        </div>
+      </section>
       <!-- --------- Subscription Section --------- -->
+      <section style="height: 1000px"></section>
     </main>
 
     <footer>

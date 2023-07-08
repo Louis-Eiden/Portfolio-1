@@ -14,6 +14,8 @@ const prt_section = document.querySelector(".portfolio");
 const zoom_icons = document.querySelectorAll(".zoom-icon");
 const modal_overlay = document.querySelector(".modal-overlay");
 const images = document.querySelectorAll(".images img");
+const prev_btn = document.querySelector(".prev-btn");
+const next_btn = document.querySelector(".next-btn");
 
 /* --------------- Event Listeners --------------- */
 
@@ -120,27 +122,71 @@ let mixer = mixitup(".portfolio-gallery", {
 /* --------------- Modal Pop Up Animation Animation --------------- */
 
 let currentIndex = 0;
+let currentPort = "";
+let portImages = [];
 
+// open modal
 zoom_icons.forEach((icon, i) =>
   icon.addEventListener("click", () => {
+    const prt_card = icon.parentElement.parentElement.parentElement;
+
     prt_section.classList.add("open");
     document.body.classList.add("stopScrolling");
-    currentIndex = i;
-    changeImage(currentIndex);
+
+    currentPort = prt_card.classList[2];
+    changeImage(currentPort, currentIndex);
   })
 );
 
+// close modal
 modal_overlay.addEventListener("click", () => {
   prt_section.classList.remove("open");
   document.body.classList.remove("stopScrolling");
+  currentIndex = 0;
 });
 
-function changeImage(index) {
+// prev image
+prev_btn.addEventListener("click", () => {
+  if (currentIndex === 0) {
+    currentIndex = portImages.length - 1;
+  } else {
+    currentIndex--;
+  }
+  console.log("currentIndex:", currentIndex);
+  console.log("portImages", portImages.length);
+  changeImage(currentPort, currentIndex);
+});
+
+// next image
+next_btn.addEventListener("click", () => {
+  if (currentIndex === portImages.length - 1) {
+    currentIndex = 0;
+  } else {
+    currentIndex++;
+  }
+  console.log("currentIndex:", currentIndex);
+  console.log("portImages", portImages.length);
+  changeImage(currentPort, currentIndex);
+});
+
+// change image
+function changeImage(port, index) {
   images.forEach((img) => img.classList.remove("showImage"));
-  images[index].classList.add("showImage");
+  portImages = document.querySelectorAll(`.${port}-img`);
+  portImages[index].classList.add("showImage");
 }
 
-/* --------------- Modal Pop Up Animation Animation --------------- */
+/* --------------- Swiper --------------- */
+
+const swiper = new Swiper(".swiper", {
+  loop: true,
+  speed: 500,
+  autoplay: true,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+});
 
 /* --------------- Change Active Link On Scroll --------------- */
 
