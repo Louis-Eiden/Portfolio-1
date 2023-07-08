@@ -1018,6 +1018,80 @@ header.scrolled .logo {
 
 /* --------------- Contact Section Styling --------------- */
 
+.contact .container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 4rem;
+}
+
+.mail {
+  color: var(--main-color-1);
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: var(--time-1);
+}
+
+.mail i {
+  display: inline-block;
+  font-size: 1.5rem;
+  margin-left: 2px;
+  transform: translateY(3px);
+  transition: margin-left var(--time-1);
+}
+
+.mail:hover i {
+  color: var(--main-color-dark-1);
+  margin-left: 10px;
+}
+
+.contact-form {
+  background-color: var(--bg-color-2);
+  border-radius: 20px;
+  padding: 3.5rem 3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form h3 {
+  color: var(--heading-color);
+  font-weight: 500;
+  font-size: 1.3rem;
+  margin-bottom: 1.6rem;
+  line-height: 0.9;
+}
+
+.form-input {
+  display: inline-block;
+  padding: 0.9rem 1.5rem;
+  background-color: var(--bg-color-3);
+  border: 2px solid var(--bg-color-3);
+  width: 100%;
+  border-radius: 17px;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--heading-color);
+  outline: none;
+  transition: var(--time-1);
+}
+
+.form-input::placeholder {
+  color: var(--text-color);
+}
+
+.form-input:hover {
+  filter: brightness(97%);
+}
+
+textarea.form-input {
+  resize: none;
+  min-height: 170px;
+}
+
+.contact-from .form-input {
+  margin-bottom: 1.5rem;
+}
+
 /* --------------- Subscription Section Styling --------------- */
 
 /* --------------- Footer Styling --------------- */
