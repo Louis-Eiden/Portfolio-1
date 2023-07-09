@@ -17,9 +17,12 @@ const images = document.querySelectorAll(".images img");
 const prev_btn = document.querySelector(".prev-btn");
 const next_btn = document.querySelector(".next-btn");
 
+const links = document.querySelectorAll(".nav-link");
+
 /* --------------- Event Listeners --------------- */
 
 window.addEventListener("scroll", () => {
+  activeLink();
   if (!skillsPlayed) skillsCounter();
   if (!mlPlayed) mlCounter();
 });
@@ -190,6 +193,27 @@ const swiper = new Swiper(".swiper", {
 
 /* --------------- Change Active Link On Scroll --------------- */
 
+function activeLink() {
+  // get all sections with a id
+  let sections = document.querySelectorAll("section[id]");
+  // create an array from the sections nodeList
+  let passedSection = Array.from(sections)
+    .map((sct, i) => {
+      // return an object with the id and the distance from the bottom of the header
+      return {
+        y: sct.getBoundingClientRect().top - header.offsetHeight,
+        id: i,
+      };
+    })
+    .filter((sct) => sct.y <= 0); // filter out the sections that are above the header
+
+  let currSectionID = passedSection.at(-1).id; // get the last section in the array
+
+  links.forEach((l) => l.classList.remove("active")); // remove active class from all links
+  links[currSectionID].classList.add("active"); // add active class to the current link
+}
+
+activeLink();
 /* --------------- Change Page Theme --------------- */
 
 /* --------------- Open & Close Navbar Menu --------------- */
