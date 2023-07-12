@@ -494,10 +494,12 @@ header.scrolled .logo {
 
 .hamburger .bar:first-child {
   top: 1rem;
+  transition: top 0.2s 0.15s, transform 0.3s;
 }
 
 .hamburger .bar:last-child {
   bottom: 1rem;
+  transition: bottom 0.2s 0.15s, transform 0.3s;
 }
 
 body.open .hamburger .bar:first-child {
@@ -1414,7 +1416,7 @@ footer .social-media {
     overflow: hidden;
   }
 
-  header.scolled {
+  header.scrolled {
     height: 485px;
     max-height: 80px;
   }
@@ -1554,6 +1556,154 @@ footer .social-media {
     row-gap: 80px;
   }
 
+  .icon {
+    width: 50px;
+  }
+
+  .about-card h3 {
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+  }
+
+  .about-grid::before {
+    width: 150px;
+    height: 150px;
+    border-width: 10px;
+  }
+  /* Skills Section Styling */
+  .box-desc {
+    grid-template-columns: 1fr;
+    justify-items: flex-start;
+  }
+
+  .skills-wrap {
+    grid-template-columns: repeat(2, 150px);
+    row-gap: 1rem;
+    justify-content: space-evenly;
+  }
+
+  .sk-title {
+    margin-top: 0;
+  }
+
+  /* Services Section Styling */
+
+  .services .container {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .services .text {
+    margin: 1.5rem 0 0.5rem;
+  }
+
+  .services-grid {
+    margin-top: 3.5rem;
+    column-gap: 1.5rem;
+    row-gap: 3.5rem;
+    max-width: 600px;
+  }
+
+  .srv-card {
+    padding: 1.8rem 1.7rem;
+    min-height: 260px;
+  }
+
+  .srv-card .text {
+    margin: 0.4rem 0 0.8rem;
+  }
+
+  /* Portfolio Section Styling*/
+
+  .portfolio-title {
+    padding-bottom: 0;
+  }
+
+  /* Testimonials Section Styling */
+  .testimonials {
+    padding: var(--section-padding) 0;
+  }
+
+  .testimonials .container {
+    position: revert;
+    max-width: 620px;
+    grid-template-columns: 1fr;
+  }
+
+  .section-background {
+    height: 100%;
+    transform: translateX(0);
+    top: 0;
+    left: 0;
+    border-radius: 0;
+    background-image: linear-gradient(
+      45deg,
+      var(--main-color-2),
+      var(--main-color-1)
+    );
+  }
+
+  .section-background .person
+  /* .section-background .circle  */ {
+    display: none;
+  }
+
+  .testimonials-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 0 3rem 0;
+  }
+
+  .swiper {
+    order: 2;
+    padding: 2rem 0;
+  }
+
+  .swiper-slide {
+    padding: 0 2rem;
+  }
+
+  .swiper-slide .text {
+    margin: 1rem 0 0;
+  }
+
+  .swiper-pagination {
+    margin-top: 3rem;
+  }
+
+  .client {
+    grid-template-columns: 65px 1fr;
+  }
+
+  .client-info h4 {
+    margin-bottom: 0.2rem;
+    font-size: 0.97rem;
+  }
+
+  .client-info h5 {
+    font-size: 0.7rem;
+  }
+
+  /* Contact Section Styling */
+  .contact .container {
+    grid-template-columns: 1fr;
+    row-gap: 3rem;
+  }
+
+  /* Subscription Section Styling */
+  .sub-box {
+    grid-template-columns: 1fr;
+    row-gap: 2rem;
+  }
+
+  .sub-box .heading {
+    margin-top: 0;
+  }
+
+  /* Shapes SVG */
+
   /*.dots {
     width: 65px;
   }
@@ -1570,10 +1720,153 @@ footer .social-media {
     top: 20%;
     left: 80%;
   }
+  .section-background .square {
+    left: 86%;
+    top: 12%;
+    width: 60px;
+  }
+  .contact .square {
+    width: 60px;
+    bottom: 68%;
+    left: 75%;
+  }
+  .contact .triangle {
+    top: 101%;
+    left: 20%;
+  }
   */
 }
 
 /* --------------- 500px Screens --------------- */
 
 @media (max-width: 500px) {
+  /* Global Styling */
+  .container {
+    padding: 0 1rem;
+  }
+
+  /* Showcase Area Styling */
+
+  .showcase-area .container {
+    row-gap: 4.5rem;
+  }
+
+  .showcase-area .heading {
+    font-size: 2.4rem;
+  }
+
+  /* Skills Section Styling */
+
+  .skills-box {
+    padding: 3rem 2.5rem;
+  }
+
+  .skills-wrap {
+    grid-template-columns: 1fr;
+    row-gap: 1.5rem;
+  }
+
+  /* Services Section Styling */
+  .services-grid {
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+  }
+
+  .srv-card {
+    transform: none !important;
+    min-height: auto;
+  }
+
+  /* Portfolio Section Styling */
+
+  .portfolio-header {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .portfolio-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .filter-btn {
+    margin-top: 1rem;
+  }
+
+  .portfolio .slider-wrap {
+    width: calc(100% - 2rem);
+    grid-template-columns: 50px 1fr 50px;
+  }
+
+  .images {
+    grid-column: 1/4;
+    grid-row: 1/2;
+  }
+
+  .prev-btn {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    z-index: 1;
+    color: #333;
+  }
+
+  .next-btn {
+    grid-column: 3/4;
+    grid-row: 1/2;
+    z-index: 1;
+    color: #333;
+  }
+  /* Contact Section Styling */
+
+  .contact-form p {
+    font-size: 1.2rem;
+  }
+
+  /* Subscription Section Styling */
+  .sub-box {
+    padding: 3rem 2.2rem;
+    row-gap: 0.5rem;
+  }
+
+  .sub-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .sub-box .heading {
+    font-size: 1.7rem;
+  }
+
+  .subscription form {
+    grid-template-columns: 1fr;
+    row-gap: 1opx;
+    justify-items: center;
+  }
+
+  /* Footer Styling */
+
+  footer {
+    padding: var(--section-padding) 0 1rem;
+  }
+
+  footer .text {
+    order: 3;
+    flex-basis: 100%;
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  /* Shapes SVG */
+
+  /* .showcase-area .square {
+    display: none;
+  }
+  .subscription .square {
+    display: none;
+  } */
 }
