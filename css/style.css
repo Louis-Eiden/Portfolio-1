@@ -2,20 +2,30 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Quicksand:wght@300;400;500;600;700&display=swap"); /* --------------- Website Theme --------------- */
 
 :root {
-  /* lila-yellow */
-  /* 
-  --hue-1: 257;
-  --hue-2: 47; 
-  */
+  /* lila-yellow  */
+  /* --hue-1: 257;
+  --hue-2: 47; */
 
   /* blue-yellow */
-  --hue-1: 208;
-  --hue-2: 41;
+  --hue-1: 208; /* #1e3d59 */
+  --hue-2: 41; /* #ffc13b */
 
   --main-color-1: hsl(var(--hue-1), 100%, 60%);
   --main-color-dark-1: hsl(var(--hue-1), 69%, 50%);
   --main-color-2: hsl(var(--hue-2), 100%, 61%);
   --main-color-dark-2: hsl(var(--hue-2), 82%, 55%);
+
+  /* beige-gray */
+  /* #e4e3e0 */
+  /* #d1bc8a */
+  /* --hue-1: 35;
+  --hue-2: 42;
+
+  --main-color-1: hsl(var(--hue-1), 60%, 64%);
+  --main-color-dark-1: hsl(var(--hue-1), 52%, 54%);
+  --main-color-2: hsl(var(--hue-2), 11%, 87%);
+  --main-color-dark-2: hsl(var(--hue-2), 6%, 80%); */
+
   --section-padding: 7rem;
   --time-1: 0.3s;
   --time-2: 0.5s;
@@ -104,117 +114,6 @@ a {
 ul {
   list-style: none;
 }
-
-/* shapes */
-
-/* .showcase-area .circle {
-  position: absolute;
-  width: 190px;
-  top: 80%;
-  left: 0;
-  transform: translate(-50%, -50%);
-}
-
-.showcase-area .dots {
-  position: absolute;
-  top: 30%;
-  left: 100%;
-  transform: translate(-50%, -50%);
-}
-
-.showcase-area .square {
-  position: absolute;
-  left: 25%;
-  bottom: 120px;
-  transform: translate(-50%, -50%);
-}
-
-.about .triangle {
-  position: absolute;
-  top: 27%;
-  left: 90%;
-  transform: translate(50%, -50%);
-}
-
-.skills .dots {
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: translate(-50%, -50%);
-  z-index: -1;
-}
-
-.skills .square {
-  position: absolute;
-  top: 75%;
-  left: 100%;
-  transform: translate(-50%, -50%);
-}
-
-.services .triangle {
-  position: absolute;
-  top: 100%;
-  left: 30%;
-  transform: translate(-50%, -100%);
-}
-
-.services .square {
-  position: absolute;
-  top: 75%;
-  left: -15px;
-  transform: translate(-50%, -50%);
-  z-index: -1;
-}
-
-.section-background .circle {
-  position: absolute;
-  width: 170px;
-  top: 79%;
-  left: 45%;
-  transform: translate(-50%, -50%);
-}
-
-.section-background .square {
-  position: absolute;
-  top: 77%;
-  left: 15%;
-  transform: translate(-50%, -50%);
-}
-
-.contact .square {
-  position: absolute;
-  top: 17%;
-  left: 15%;
-  transform: translate(-50%, -50%);
-}
-
-.contact .triangle {
-  position: absolute;
-  top: 90%;
-  left: 98%;
-  transform: translate(-50%, -50%);
-}
-
-.subscription .square {
-position: absolute;
-top: 52%;
-left: 7%;
-transform: translate(0, -50%) scale(0.95);
-}
-
-.dots {
-  width: 112px;
-}
-
-.square {
-  width: 70px;
-  transition: opacity var(--time-1); for theme change
-}
-
-.triangle {
-  width: 95px;
-  opacity: 0.18;
-} */
 
 /* --------------- Reusable CSS Code --------------- */
 
@@ -587,97 +486,6 @@ body.open .hamburger .bar:last-child {
   margin: 3rem 0 4rem;
 }
 
-.about-grid {
-  display: grid;
-  grid-template-columns: 190px 190px;
-  grid-template-rows: 190px 190px;
-  justify-content: center;
-  column-gap: 2.5rem;
-  row-gap: 100px;
-  margin-right: 2rem;
-  position: relative;
-}
-
-.about-card {
-  background-color: var(--bg-color-2);
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: transform var(--time-2) /* for hoover */,
-    background-color var(--time-1) /* for theme change */;
-}
-
-.about-card:nth-child(1) {
-  border-radius: 40px 40px 5px 40px;
-}
-
-.about-card:nth-child(2) {
-  margin-top: 50px;
-  border-radius: 40px 40px 40px 5px;
-}
-
-.about-card:nth-child(3) {
-  margin-top: -50px;
-  border-radius: 40px 5px 40px 40px;
-}
-
-.about-card:nth-child(4) {
-  border-radius: 5px 40px 40px 40px;
-}
-
-.icon {
-  width: 60px;
-}
-
-.st0 {
-  fill: var(--bg-color-3);
-  transition: fill var(--time-1); /* for theme change */
-}
-
-.st1 {
-  fill: #c5e3ea;
-  transition: fill var(--time-1); /* for theme change */
-}
-
-.st2 {
-  fill: var(--heading-color);
-  transition: var(--time-1);
-}
-
-.about-card h3 {
-  color: var(--heading-color);
-  font-weight: 600;
-  font-size: 1rem;
-  margin-top: 1rem;
-  letter-spacing: 0.3px;
-  transition: color var(--time-1); /* for theme change */
-}
-
-.about-card:hover {
-  transform: scale(1.1);
-}
-
-.about-card:hover .st2 {
-  fill: var(--main-color-1);
-}
-
-.about-grid::before {
-  content: "";
-  position: absolute;
-  width: 210px;
-  height: 210px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border: 15px solid var(--main-color-1);
-  z-index: -1;
-  opacity: 0.07;
-}
-
 /* --------------- Skills Section Styling --------------- */
 
 .skills {
@@ -849,6 +657,131 @@ body.open .hamburger .bar:last-child {
 }
 
 .services-grid::before {
+  content: "";
+  position: absolute;
+  width: 210px;
+  height: 210px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 15px solid var(--main-color-1);
+  z-index: -1;
+  opacity: 0.07;
+}
+
+/* --------------- Details Section Styling --------------- */
+
+.details .container {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  align-items: center;
+}
+
+.details-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 0;
+}
+
+.details .text {
+  margin: 3rem 0 4rem;
+}
+
+.details-swiper {
+  width: 500px;
+  padding: 4rem 0 2.5rem;
+}
+
+.details .swiper-slide {
+  padding: 0 2.5rem;
+}
+
+.details .swiper-slide .text {
+  display: block;
+  margin: 1.5rem 0 0;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: 190px 190px;
+  grid-template-rows: 190px 190px;
+  justify-content: center;
+  column-gap: 2.5rem;
+  row-gap: 100px;
+  margin-right: 2rem;
+  position: relative;
+}
+
+.details-card {
+  background-color: var(--bg-color-2);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform var(--time-2) /* for hoover */,
+    background-color var(--time-1) /* for theme change */;
+}
+
+.details-card:nth-child(1) {
+  border-radius: 40px 40px 5px 40px;
+}
+
+.details-card:nth-child(2) {
+  margin-top: 50px;
+  border-radius: 40px 40px 40px 5px;
+}
+
+.details-card:nth-child(3) {
+  margin-top: -50px;
+  border-radius: 40px 5px 40px 40px;
+}
+
+.details-card:nth-child(4) {
+  border-radius: 5px 40px 40px 40px;
+}
+
+.icon {
+  width: 60px;
+}
+
+.st0 {
+  fill: var(--bg-color-3);
+  transition: fill var(--time-1); /* for theme change */
+}
+
+.st1 {
+  fill: #c5e3ea;
+  transition: fill var(--time-1); /* for theme change */
+}
+
+.st2 {
+  fill: var(--heading-color);
+  transition: var(--time-1);
+}
+
+.details-card h3 {
+  color: var(--heading-color);
+  font-weight: 600;
+  font-size: 1rem;
+  margin-top: 1rem;
+  letter-spacing: 0.3px;
+  transition: color var(--time-1); /* for theme change */
+}
+
+.details-card:hover {
+  transform: scale(1.1);
+}
+
+.details-card:hover .st2 {
+  fill: var(--main-color-1);
+}
+
+.details-grid::before {
   content: "";
   position: absolute;
   width: 210px;
@@ -1074,7 +1007,7 @@ body.open .hamburger .bar:last-child {
   align-items: center;
 }
 
-.swiper {
+.testimonials-swiper {
   width: 100%;
   background-color: var(--bg-color-2);
   border-radius: 15px;
@@ -1082,7 +1015,7 @@ body.open .hamburger .bar:last-child {
   transition: background-color var(--time-1); /* for theme change */
 }
 
-.swiper-slide {
+.testimonials .swiper-slide {
   padding: 0 2.5rem;
 }
 
@@ -1116,12 +1049,12 @@ body.open .hamburger .bar:last-child {
   color: var(--main-color-1);
 }
 
-.swiper-slide .text {
+.testimonials .swiper-slide .text {
   display: block;
   margin: 1.5rem 0 0;
 }
 
-.swiper-pagination {
+.testimonials .swiper-pagination {
   position: static;
   display: flex;
   align-items: center;
@@ -1130,7 +1063,7 @@ body.open .hamburger .bar:last-child {
   margin-top: 3rem;
 }
 
-.swiper-pagination-bullet {
+.testimonials .swiper-pagination-bullet {
   background-color: var(--main-color-1);
   opacity: 0.3;
   width: 7px;
@@ -1138,7 +1071,7 @@ body.open .hamburger .bar:last-child {
   cursor: pointer;
 }
 
-.swiper-pagination-bullet-active {
+.testimonials .swiper-pagination-bullet-active {
   opacity: 1;
   width: 11px;
   height: 11px;
@@ -1297,7 +1230,7 @@ footer .social-media {
 
 .social-link:hover {
   background-color: var(--main-color-1);
-  color: var(--main-color-1);
+  /* color: var(--main-color-1); */
 }
 
 /* --------------- 1000px Screens --------------- */
@@ -1539,11 +1472,12 @@ footer .social-media {
 
   /* About Section Styling */
 
-  .about .container {
+  /* Details Section Styling */
+  .details .container {
     grid-template-columns: 1fr;
   }
 
-  .about-grid {
+  .details-grid {
     order: 3;
   }
 
@@ -1551,11 +1485,11 @@ footer .social-media {
     display: none;
   }
 
-  .about .text {
+  .details .text {
     margin: 1rem 0 1.5rem;
   }
 
-  .about-grid {
+  .details-grid {
     grid-template-columns: 150px 150px;
     grid-template-rows: 150px 150px;
     margin: 2.5rem 0 0 0;
@@ -1567,12 +1501,12 @@ footer .social-media {
     width: 50px;
   }
 
-  .about-card h3 {
+  .details-card h3 {
     font-size: 0.8rem;
     margin-top: 0.5rem;
   }
 
-  .about-grid::before {
+  .details-grid::before {
     width: 150px;
     height: 150px;
     border-width: 10px;
@@ -1708,40 +1642,6 @@ footer .social-media {
   .sub-box .heading {
     margin-top: 0;
   }
-
-  /* Shapes SVG */
-
-  /*.dots {
-    width: 65px;
-  }
-  .square {
-    width: 55px;
-  }
-  .triangle {
-    width: 70px;
-  }
-  .showcase-area .circle {
-    width: 120px;
-  }
-  .showcase-area .square {
-    top: 20%;
-    left: 80%;
-  }
-  .section-background .square {
-    left: 86%;
-    top: 12%;
-    width: 60px;
-  }
-  .contact .square {
-    width: 60px;
-    bottom: 68%;
-    left: 75%;
-  }
-  .contact .triangle {
-    top: 101%;
-    left: 20%;
-  }
-  */
 }
 
 /* --------------- 500px Screens --------------- */
@@ -1867,13 +1767,4 @@ footer .social-media {
     text-align: center;
     margin-top: 1rem;
   }
-
-  /* Shapes SVG */
-
-  /* .showcase-area .square {
-    display: none;
-  }
-  .subscription .square {
-    display: none;
-  } */
 }

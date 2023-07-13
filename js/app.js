@@ -117,7 +117,7 @@ function mlCounter() {
 
 /* --------------- Portfolio Filter Animation --------------- */
 
-let mixer = mixitup(".portfolio-gallery", {
+let portfolioMixer = mixitup(".portfolio-gallery", {
   selectors: {
     target: ".prt-card",
   },
@@ -126,7 +126,40 @@ let mixer = mixitup(".portfolio-gallery", {
   },
 });
 
-/* --------------- Modal Pop Up Animation Animation --------------- */
+// Attach event listeners to filter buttons for portfolioMixer
+const filterButtons1 = document.querySelectorAll(
+  ".portfolio-gallery .filter-btns"
+);
+filterButtons1.forEach(function (button) {
+  button.addEventListener("click", function () {
+    const filterValue = button.getAttribute("data-filter");
+    portfolioMixer.filter(filterValue);
+  });
+});
+
+/* --------------- Details Filter Animation --------------- */
+let detailsMixer = mixitup(".details", {
+  selectors: {
+    target: ".details-grid, .swiper-wrapper",
+  },
+  load: {
+    filter: ".details-grid:first-child, .swiper-wrapper:first-child",
+  },
+  animation: {
+    enable: false,
+  },
+});
+
+// Attach event listeners to filter buttons for detailsMixer
+const filterButtons2 = document.querySelectorAll(".details .filter-btns");
+filterButtons1.forEach(function (button) {
+  button.addEventListener("click", function () {
+    const filterValue = button.getAttribute("data-filter");
+    detailsMixer.filter(filterValue);
+  });
+});
+
+/* --------------- Modal Slideshow Animation --------------- */
 
 let currentIndex = 0;
 let currentPort = "";
@@ -159,8 +192,6 @@ prev_btn.addEventListener("click", () => {
   } else {
     currentIndex--;
   }
-  console.log("currentIndex:", currentIndex);
-  console.log("portImages", portImages.length);
   changeImage(currentPort, currentIndex);
 });
 
@@ -171,8 +202,6 @@ next_btn.addEventListener("click", () => {
   } else {
     currentIndex++;
   }
-  console.log("currentIndex:", currentIndex);
-  console.log("portImages", portImages.length);
   changeImage(currentPort, currentIndex);
 });
 
@@ -184,13 +213,28 @@ function changeImage(port, index) {
 }
 
 /* --------------- Swiper --------------- */
+const detailsSwiper = new Swiper(".details-swiper", {
+  loop: false,
+  autoplay: false,
+  on: {
+    init: function () {
+      const detailsCards = document.querySelectorAll(".details-card");
+      detailsCards.forEach(function (card) {
+        card.addEventListener("click", function () {
+          let slideIndex = parseInt(card.dataset.slideIndex);
+          detailsSwiper.slideTo(slideIndex);
+        });
+      });
+    },
+  },
+});
 
-const swiper = new Swiper(".swiper", {
+const testimonialsSwiper = new Swiper(".swiper", {
   loop: true,
   speed: 500,
   autoplay: true,
   pagination: {
-    el: ".swiper-pagination",
+    el: ".testimonials-pagination",
     clickable: true,
   },
 });
