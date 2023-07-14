@@ -194,6 +194,33 @@ function changeImage(port, index) {
   portImages[index].classList.add("showImage");
 }
 
+/* --------------- Timeline Swiper --------------- */
+
+const timelineSwiper = new Swiper(".timeline-swiper", {
+  // direction: "vertical",
+  loop: false,
+  autoplay: false,
+  on: {
+    init: function () {
+      const timeline = document.querySelectorAll(".timespan");
+      timeline.forEach(function (timespan) {
+        timespan.addEventListener("click", function () {
+          // Remove active class from all timespans
+          timeline.forEach(function (item) {
+            item.classList.remove("active");
+          });
+
+          // Add active class to the clicked timespan
+          timespan.classList.add("active");
+
+          let slideIndex = parseInt(timespan.dataset.slideIndex);
+          timelineSwiper.slideTo(slideIndex);
+        });
+      });
+    },
+  },
+});
+
 /* --------------- Details Swiper --------------- */
 const detailsSwiper = new Swiper(".details-swiper", {
   loop: false,
