@@ -115,32 +115,11 @@ function mlCounter() {
   });
 }
 
-/* --------------- Portfolio Filter Animation --------------- */
-
-let portfolioMixer = mixitup(".portfolio-gallery", {
-  selectors: {
-    target: ".prt-card",
-  },
-  animation: {
-    duration: 500,
-  },
-});
-
-// Attach event listeners to filter buttons for portfolioMixer
-const filterButtons1 = document.querySelectorAll(
-  ".portfolio-gallery .filter-btns"
-);
-filterButtons1.forEach(function (button) {
-  button.addEventListener("click", function () {
-    const filterValue = button.getAttribute("data-filter");
-    portfolioMixer.filter(filterValue);
-  });
-});
-
 /* --------------- Details Filter Animation --------------- */
 let detailsMixer = mixitup(".details", {
   selectors: {
     target: ".details-grid, .swiper-wrapper",
+    control: ".details-filter",
   },
   load: {
     filter: ".details-grid:first-child, .swiper-wrapper:first-child",
@@ -150,13 +129,16 @@ let detailsMixer = mixitup(".details", {
   },
 });
 
-// Attach event listeners to filter buttons for detailsMixer
-const filterButtons2 = document.querySelectorAll(".details .filter-btns");
-filterButtons1.forEach(function (button) {
-  button.addEventListener("click", function () {
-    const filterValue = button.getAttribute("data-filter");
-    detailsMixer.filter(filterValue);
-  });
+/* --------------- Portfolio Filter Animation --------------- */
+
+let portfolioMixer = mixitup(".portfolio-gallery", {
+  selectors: {
+    target: ".prt-card",
+    control: ".portfolio-filter",
+  },
+  animation: {
+    duration: 500,
+  },
 });
 
 /* --------------- Modal Slideshow Animation --------------- */
@@ -212,7 +194,7 @@ function changeImage(port, index) {
   portImages[index].classList.add("showImage");
 }
 
-/* --------------- Swiper --------------- */
+/* --------------- Details Swiper --------------- */
 const detailsSwiper = new Swiper(".details-swiper", {
   loop: false,
   autoplay: false,
@@ -229,7 +211,8 @@ const detailsSwiper = new Swiper(".details-swiper", {
   },
 });
 
-const testimonialsSwiper = new Swiper(".swiper", {
+/* --------------- Testimonials Swiper --------------- */
+const testimonialsSwiper = new Swiper(".testimonials-swiper", {
   loop: true,
   speed: 500,
   autoplay: true,

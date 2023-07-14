@@ -247,6 +247,27 @@ ul {
   bottom: -2px;
 }
 
+/* MixItUp Buttons */
+.filter-btn {
+  display: inline-block;
+  color: var(--heading-color);
+  background: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  margin-left: 1.3rem;
+  font-family: inherit;
+  text-transform: uppercase;
+  transition: color var(--time-1); /* for theme change */
+}
+
+.filter-btn.mixitup-control-active {
+  color: var(--main-color-1);
+}
+
 /* Forms */
 .form-input {
   display: inline-block;
@@ -685,13 +706,14 @@ body.open .hamburger .bar:last-child {
   padding: 2.5rem 0;
 }
 
-.details .text {
-  margin: 3rem 0 4rem;
+.details .filter-btn {
+  margin-top: 2.5rem;
 }
 
 .details-swiper {
   width: 500px;
-  padding: 4rem 0 2.5rem;
+  height: 450px;
+  padding: 2.5rem 0 2.5rem;
 }
 
 .details .swiper-slide {
@@ -700,7 +722,11 @@ body.open .hamburger .bar:last-child {
 
 .details .swiper-slide .text {
   display: block;
-  margin: 1.5rem 0 0;
+  margin: 0;
+}
+
+.details .cta {
+  margin-top: 0;
 }
 
 .details-grid {
@@ -809,26 +835,6 @@ body.open .hamburger .bar:last-child {
 
 .portfolio-title {
   padding-bottom: 1rem;
-}
-
-.filter-btn {
-  display: inline-block;
-  color: var(--heading-color);
-  background: none;
-  outline: none;
-  border: none;
-  cursor: pointer;
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.4px;
-  margin-left: 1.3rem;
-  font-family: inherit;
-  text-transform: uppercase;
-  transition: color var(--time-1); /* for theme change */
-}
-
-.filter-btn.mixitup-control-active {
-  color: var(--main-color-1);
 }
 
 .portfolio-gallery {
@@ -1008,7 +1014,7 @@ body.open .hamburger .bar:last-child {
 }
 
 .testimonials-swiper {
-  width: 100%;
+  width: 600px;
   background-color: var(--bg-color-2);
   border-radius: 15px;
   padding: 4rem 0 2.5rem;
@@ -1597,7 +1603,8 @@ footer .social-media {
     padding: 0 0 3rem 0;
   }
 
-  .swiper {
+  .testimonials-swiper {
+    width: 500px;
     order: 2;
     padding: 2rem 0;
   }
@@ -1725,6 +1732,15 @@ footer .social-media {
     z-index: 1;
     color: #333;
   }
+
+  /* Testimonials Section Styling */
+
+  .testimonials-swiper {
+    width: 345px;
+    order: 2;
+    padding: 2rem 0;
+  }
+
   /* Contact Section Styling */
 
   .contact-form p {
