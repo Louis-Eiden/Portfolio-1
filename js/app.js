@@ -212,6 +212,7 @@ const timelineSwiper = new Swiper(".timeline-swiper", {
 
           // Add active class to the clicked timespan
           timespan.classList.add("active");
+          scrollTo;
 
           let slideIndex = parseInt(timespan.dataset.slideIndex);
           timelineSwiper.slideTo(slideIndex);
