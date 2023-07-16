@@ -3,6 +3,11 @@
 const header = document.querySelector("header");
 const navbar = document.querySelector(".navbar");
 
+const container = document.querySelector(".about .container");
+const content = container.children[0];
+const topIcon = document.querySelector(".top-icon");
+const bottomIcon = document.querySelector(".bottom-icon");
+
 const first_skill = document.querySelector(".skill:first-child");
 const sk_counter = document.querySelectorAll(".counter span");
 const progress_bars = document.querySelectorAll(".skills svg circle");
@@ -27,6 +32,7 @@ const hamburger = document.querySelector(".hamburger");
 
 window.addEventListener("scroll", () => {
   activeLink();
+  aboutArrows();
   if (!skillsPlayed) skillsCounter();
   if (!mlPlayed) mlCounter();
 });
@@ -72,6 +78,48 @@ let sr = ScrollReveal({
 
 sr.reveal(".showcase-info", { delay: 600 });
 sr.reveal(".showcase-image", { origin: "top", delay: 700 });
+
+/* --------------- About Section --------------- */
+
+function aboutArrows() {
+  // get the about section offset top
+  const aboutOffsetTop = document.querySelector(".about").offsetTop;
+  console.log("aboutOffsetTop", aboutOffsetTop);
+  // check if the user has scrolled to the about section
+  const scrollTop = document.documentElement.scrollTop;
+  console.log("scrollTop", scrollTop);
+  if (scrollTop >= aboutOffsetTop) {
+    topIcon.style.display = "block";
+  } else {
+    topIcon.style.display = "none";
+  }
+  // check if the user has scrolled past the about section
+  const aboutHeight = document.querySelector(".about").offsetHeight;
+  console.log("aboutHeight", aboutHeight);
+  if (scrollTop >= aboutOffsetTop + aboutHeight) {
+    bottomIcon.style.display = "block";
+  } else {
+    bottomIcon.style.display = "none";
+  }
+}
+
+container.addEventListener("scroll", function () {
+  const scrollTop = container.scrollTop;
+  const containerHeight = container.offsetHeight;
+  const contentHeight = content.offsetHeight;
+
+  if (scrollTop <= 150) {
+    topIcon.style.display = "block";
+  } else {
+    topIcon.style.display = "none";
+  }
+
+  if (scrollTop >= contentHeight - 150) {
+    bottomIcon.style.display = "block";
+  } else {
+    bottomIcon.style.display = "none";
+  }
+});
 
 /* --------------- Skills Progress Bar Animation --------------- */
 
@@ -194,10 +242,66 @@ function changeImage(port, index) {
   portImages[index].classList.add("showImage");
 }
 
+/* --------------- Timeline Scroll --------------- */
+
+const timespans = document.querySelectorAll(".timespan");
+const scrollContainer = document.querySelector(".about .container");
+let scrolling = false;
+
+// Function to check if an element is in the middle of the viewport
+function isElementInViewport(element) {
+  const rect = element.getBoundingClientRect();
+  const viewportHeight =
+    window.innerHeight || document.documentElement.clientHeight;
+  const middleViewport = viewportHeight / 2;
+
+  return rect.top <= middleViewport && rect.bottom >= middleViewport;
+}
+
+// Function to remove the active class from all timespan elements
+function removeActiveClass() {
+  timespans.forEach((timespan) => {
+    timespan.classList.remove("active");
+  });
+}
+
+// Function to set the active class to the timespan element in the middle of the viewport
+function setActiveClass() {
+  removeActiveClass();
+
+  timespans.forEach((timespan) => {
+    if (isElementInViewport(timespan)) {
+      timespan.classList.add("active");
+      const slideIndex = parseInt(timespan.dataset.slideIndex);
+      timelineSwiper.slideTo(slideIndex);
+    }
+  });
+}
+
+// Function to scroll to a timespan element
+function scrollToTimespan(timespan) {
+  timespan.scrollIntoView({
+    behavior: "smooth",
+    block: "center",
+    inline: "center",
+  });
+}
+
+// Call the setActiveClass function initially on window load and on scroll
+window.addEventListener("load", setActiveClass);
+scrollContainer.addEventListener("scroll", function () {
+  if (!scrolling) {
+    scrolling = true;
+    window.requestAnimationFrame(function () {
+      setActiveClass();
+      scrolling = false;
+    });
+  }
+});
+
 /* --------------- Timeline Swiper --------------- */
 
 const timelineSwiper = new Swiper(".timeline-swiper", {
-  // direction: "vertical",
   loop: false,
   autoplay: false,
   on: {
@@ -212,12 +316,31 @@ const timelineSwiper = new Swiper(".timeline-swiper", {
 
           // Add active class to the clicked timespan
           timespan.classList.add("active");
-          scrollTo;
 
+          // Scroll to the clicked timespan
+          scrollToTimespan(timespan);
+
+          // Slide to the corresponding slide
           let slideIndex = parseInt(timespan.dataset.slideIndex);
           timelineSwiper.slideTo(slideIndex);
         });
       });
+    },
+    slideChange: function () {
+      const timeline = document.querySelectorAll(".timespan");
+      const activeSlideIndex = timelineSwiper.activeIndex;
+
+      // Remove active class from all timespans
+      timeline.forEach(function (item) {
+        item.classList.remove("active");
+      });
+
+      // Add active class to the corresponding timespan of the active slide
+      timeline[activeSlideIndex].classList.add("active");
+
+      // Scroll to the corresponding timespan
+      const activeTimespan = timeline[activeSlideIndex];
+      scrollToTimespan(activeTimespan);
     },
   },
 });

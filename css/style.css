@@ -130,6 +130,7 @@ ul {
   position: relative;
   padding: var(--section-padding) 0;
   width: 100%;
+  min-height: 100vh;
 }
 
 .logo {
@@ -512,6 +513,7 @@ body.open .hamburger .bar:last-child {
   scrollbar-width: thin; /* For Firefox */
   -ms-overflow-style: none; /* For Internet Explorer and Edge */
 }
+
 .about .container::-webkit-scrollbar {
   display: none; /* For Chrome, Safari, and Opera */
   width: 0.5em; /* Adjust the width as per your preference */
@@ -522,8 +524,35 @@ body.open .hamburger .bar:last-child {
   background-color: transparent; /* Hide the scrollbar thumb */
 }
 
+.arrows {
+  all: unset;
+  color: var(--heading-color);
+}
+
+.top-icon {
+  display: none;
+  position: absolute;
+  font-size: 4rem;
+  top: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+  z-index: 1;
+}
+
+.bottom-icon {
+  display: none;
+  font-size: 4rem;
+  position: absolute;
+  bottom: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+  z-index: 1;
+}
+
 .about-timeline {
-  margin: 20px auto;
+  margin: 500px auto;
   max-width: 500px;
 }
 
@@ -1400,11 +1429,16 @@ footer .social-media {
     font-size: 1.5rem;
   }
 
-  .timespan::before {
-    left: 5px;
+  .about .container {
+    scroll-snap-align: end;
   }
 
   .about-info {
+    /* width: 400px; */
+    margin-left: 2rem;
+  }
+
+  .timeline-swiper .swiper-wrapper {
     width: 400px;
   }
 
@@ -1567,6 +1601,10 @@ footer .social-media {
     max-height: 570px;
     max-width: 450px;
     margin-top: 0px;
+    border-radius: 40px;
+  }
+
+  .showcase-image .person {
     border-radius: 40px;
   }
 
