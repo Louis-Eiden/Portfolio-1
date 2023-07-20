@@ -32,6 +32,7 @@ const hamburger = document.querySelector(".hamburger");
 
 window.addEventListener("scroll", () => {
   activeLink();
+  activeAbout();
   aboutArrows();
   if (!skillsPlayed) skillsCounter();
   if (!mlPlayed) mlCounter();
@@ -80,6 +81,28 @@ sr.reveal(".showcase-info", { delay: 600 });
 sr.reveal(".showcase-image", { origin: "top", delay: 700 });
 
 /* --------------- About Section --------------- */
+
+// only set overflow to scroll when the user has scrolled to the about section
+// and remove it when the user has scrolled past the about section
+
+function activeAbout() {
+  // get the about section offset top
+  const aboutOffsetTop = document.querySelector(".about").offsetTop;
+  // check if the user has scrolled to the about section
+  const scrollTop = document.documentElement.scrollTop;
+  if (scrollTop >= aboutOffsetTop) {
+    container.style.overflowY = "scroll";
+  } else {
+    container.style.overflowY = "hidden";
+  }
+  // check if the user has scrolled past the about section
+  const aboutHeight = document.querySelector(".about").offsetHeight;
+  if (scrollTop >= aboutOffsetTop + aboutHeight / 2) {
+    container.style.overflowY = "hidden";
+  }
+}
+
+activeAbout();
 
 function aboutArrows() {
   // get the about section offset top
