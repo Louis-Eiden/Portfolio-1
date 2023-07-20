@@ -108,13 +108,13 @@ container.addEventListener("scroll", function () {
   const containerHeight = container.offsetHeight;
   const contentHeight = content.offsetHeight;
 
-  if (scrollTop <= 150) {
+  if (scrollTop <= 250) {
     topIcon.style.display = "block";
   } else {
     topIcon.style.display = "none";
   }
 
-  if (scrollTop >= contentHeight - 150) {
+  if (scrollTop >= contentHeight - 250) {
     bottomIcon.style.display = "block";
   } else {
     bottomIcon.style.display = "none";
@@ -261,6 +261,7 @@ function isElementInViewport(element) {
 // Function to remove the active class from all timespan elements
 function removeActiveClass() {
   timespans.forEach((timespan) => {
+    console.log("remove active class");
     timespan.classList.remove("active");
   });
 }
@@ -280,6 +281,7 @@ function setActiveClass() {
 
 // Function to scroll to a timespan element
 function scrollToTimespan(timespan) {
+  scrolling = true;
   timespan.scrollIntoView({
     behavior: "smooth",
     block: "center",
@@ -288,16 +290,31 @@ function scrollToTimespan(timespan) {
 }
 
 // Call the setActiveClass function initially on window load and on scroll
-window.addEventListener("load", setActiveClass);
-scrollContainer.addEventListener("scroll", function () {
+// window.addEventListener("load", setActiveClass);
+
+scrollContainer.addEventListener("scroll", scrollHandler);
+scrollContainer.addEventListener("scrollend", () => {
+  debounce(scrollEndHandler, 100);
+});
+
+function scrollEndHandler() {
+  scrolling = false;
+}
+
+function scrollHandler() {
   if (!scrolling) {
-    scrolling = true;
     window.requestAnimationFrame(function () {
       setActiveClass();
-      scrolling = false;
     });
   }
-});
+}
+
+function debounce(method, delay) {
+  clearTimeout(method._tId);
+  method._tId = setTimeout(function () {
+    method();
+  }, delay);
+}
 
 /* --------------- Timeline Swiper --------------- */
 
@@ -305,27 +322,27 @@ const timelineSwiper = new Swiper(".timeline-swiper", {
   loop: false,
   autoplay: false,
   on: {
-    init: function () {
-      const timeline = document.querySelectorAll(".timespan");
-      timeline.forEach(function (timespan) {
-        timespan.addEventListener("click", function () {
-          // Remove active class from all timespans
-          timeline.forEach(function (item) {
-            item.classList.remove("active");
-          });
+    // init: function () {
+    //   const timeline = document.querySelectorAll(".timespan");
+    //   timeline.forEach(function (timespan) {
+    //     timespan.addEventListener("click", function () {
+    //       // Remove active class from all timespans
+    //       timeline.forEach(function (item) {
+    //         item.classList.remove("active");
+    //       });
 
-          // Add active class to the clicked timespan
-          timespan.classList.add("active");
+    //       // Add active class to the clicked timespan
+    //       timespan.classList.add("active");
 
-          // Scroll to the clicked timespan
-          scrollToTimespan(timespan);
+    //       // Scroll to the clicked timespan
+    //       scrollToTimespan(timespan);
 
-          // Slide to the corresponding slide
-          let slideIndex = parseInt(timespan.dataset.slideIndex);
-          timelineSwiper.slideTo(slideIndex);
-        });
-      });
-    },
+    //       // Slide to the corresponding slide
+    //       let slideIndex = parseInt(timespan.dataset.slideIndex);
+    //       timelineSwiper.slideTo(slideIndex);
+    //     });
+    //   });
+    // },
     slideChange: function () {
       const timeline = document.querySelectorAll(".timespan");
       const activeSlideIndex = timelineSwiper.activeIndex;
@@ -349,6 +366,10 @@ const timelineSwiper = new Swiper(".timeline-swiper", {
 const detailsSwiper = new Swiper(".details-swiper", {
   loop: false,
   autoplay: false,
+  pagination: {
+    el: ".details-pagination",
+    clickable: true,
+  },
   on: {
     init: function () {
       const detailsCards = document.querySelectorAll(".details-card");
@@ -358,6 +379,18 @@ const detailsSwiper = new Swiper(".details-swiper", {
           detailsSwiper.slideTo(slideIndex);
         });
       });
+    },
+    slideChange: function () {
+      const detailsCards = document.querySelectorAll(".details-card");
+      const activeSlideIndex = detailsSwiper.activeIndex;
+
+      // Remove active class from all timespans
+      detailsCards.forEach(function (item) {
+        item.classList.remove("active");
+      });
+
+      // Add active class to the corresponding timespan of the active slide
+      detailsCards[activeSlideIndex].classList.add("active");
     },
   },
 });

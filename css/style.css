@@ -345,6 +345,11 @@ header.scrolled .logo {
   width: 100%;
 }
 
+.links ul li:nth-child(3),
+.links ul li:nth-child(5) {
+  display: none;
+}
+
 .nav-link {
   position: relative;
   display: inline-block;
@@ -447,7 +452,6 @@ body.open .hamburger .bar:last-child {
 .showcase-area {
   padding: 120px 0;
   width: 100%;
-  height: 100vh;
   overflow: hidden;
   position: relative; /* for shape svg */
 }
@@ -457,7 +461,7 @@ body.open .hamburger .bar:last-child {
   grid-template-columns: 1fr 550px;
   height: calc(100vh - 120px);
   height: 600px; /* for responsive */
-  max-height: 600px;
+  /* max-height: 600px; */
   align-items: center;
 }
 
@@ -502,7 +506,7 @@ body.open .hamburger .bar:last-child {
   /* position: relative; */
   /* align-items: center; */
   display: grid;
-  grid-template-columns: 1.05fr 1fr;
+  grid-template-columns: 1fr 1fr;
   overflow-y: scroll;
   height: calc(100vh - 80px);
   scroll-snap-type: y mandatory; /* For snapping timespan */
@@ -564,13 +568,17 @@ body.open .hamburger .bar:last-child {
   justify-content: center;
   text-align: center;
   padding: 0 1rem;
-  cursor: pointer;
+  /* cursor: pointer; */
   border: 2px solid var(--bg-color-2);
   background-color: transparent;
   border-radius: 20px;
   /* snap when scrolling */
   scroll-snap-align: center;
   scroll-snap-stop: always;
+}
+
+.timespan-txt {
+  display: none;
 }
 
 .line {
@@ -875,6 +883,14 @@ body.open .hamburger .bar:last-child {
     background-color var(--time-1) /* for theme change */;
 }
 
+.details-card.active {
+  transform: scale(1.1);
+}
+
+.details-card.active .st2 {
+  fill: var(--main-color-1);
+}
+
 .details-card:nth-child(1) {
   border-radius: 40px 40px 5px 40px;
 }
@@ -940,6 +956,11 @@ body.open .hamburger .bar:last-child {
   border: 15px solid var(--main-color-1);
   z-index: -1;
   opacity: 0.07;
+}
+
+.details-pagination {
+  display: none;
+  margin: 1rem 0 2rem;
 }
 
 /* --------------- Portfolio Section Styling --------------- */
@@ -1191,7 +1212,7 @@ body.open .hamburger .bar:last-child {
   margin-top: 3rem;
 }
 
-.testimonials .swiper-pagination-bullet {
+.swiper-pagination-bullet {
   background-color: var(--main-color-1);
   opacity: 0.3;
   width: 7px;
@@ -1199,7 +1220,7 @@ body.open .hamburger .bar:last-child {
   cursor: pointer;
 }
 
-.testimonials .swiper-pagination-bullet-active {
+.swiper-pagination-bullet-active {
   opacity: 1;
   width: 11px;
   height: 11px;
@@ -1433,6 +1454,14 @@ footer .social-media {
     scroll-snap-align: end;
   }
 
+  .top-icon {
+    top: 100px;
+  }
+
+  .bottom-icon {
+    bottom: 100px;
+  }
+
   .about-info {
     /* width: 400px; */
     margin-left: 2rem;
@@ -1623,6 +1652,27 @@ footer .social-media {
 
   /* About Section Styling */
 
+  .about-timeline {
+    margin: 500px auto;
+  }
+
+  /* Skills Section Styling */
+
+  .box-desc {
+    grid-template-columns: 1fr;
+    justify-items: flex-start;
+  }
+
+  .skills-wrap {
+    grid-template-columns: repeat(2, 150px);
+    row-gap: 1rem;
+    justify-content: space-evenly;
+  }
+
+  .sk-title {
+    margin-top: 0;
+  }
+
   /* Details Section Styling */
   .details .container {
     grid-template-columns: 1fr;
@@ -1640,12 +1690,20 @@ footer .social-media {
     margin: 1rem 0 1.5rem;
   }
 
+  .details-title {
+    text-transform: capitalize;
+    font-weight: 600;
+    font-style: bold;
+    color: var(--heading-color);
+  }
+
   .details-grid {
-    grid-template-columns: 150px 150px;
+    /* grid-template-columns: 150px 150px;
     grid-template-rows: 150px 150px;
     margin: 2.5rem 0 0 0;
     column-gap: 2rem;
-    row-gap: 80px;
+    row-gap: 80px; */
+    display: none;
   }
 
   .icon {
@@ -1662,20 +1720,9 @@ footer .social-media {
     height: 150px;
     border-width: 10px;
   }
-  /* Skills Section Styling */
-  .box-desc {
-    grid-template-columns: 1fr;
-    justify-items: flex-start;
-  }
 
-  .skills-wrap {
-    grid-template-columns: repeat(2, 150px);
-    row-gap: 1rem;
-    justify-content: space-evenly;
-  }
-
-  .sk-title {
-    margin-top: 0;
+  .details-pagination {
+    display: block;
   }
 
   /* Services Section Styling */
@@ -1723,7 +1770,7 @@ footer .social-media {
   }
 
   .section-background {
-    height: 100%;
+    height: 600px;
     transform: translateX(0);
     top: 0;
     left: 0;
@@ -1814,6 +1861,32 @@ footer .social-media {
     font-size: 2.4rem;
   }
 
+  /* About Section Styling */
+
+  .about .container {
+    grid-template-columns: 1fr;
+  }
+
+  .about-timeline {
+    margin: 400px auto;
+  }
+
+  .timespan {
+    padding: 2rem 0;
+  }
+
+  .timespan-txt {
+    display: block;
+  }
+
+  .about .text {
+    margin: 2rem 1rem 0;
+  }
+
+  .about-info {
+    display: none;
+  }
+
   /* Skills Section Styling */
 
   .skills-box {
@@ -1834,6 +1907,27 @@ footer .social-media {
   .srv-card {
     transform: none !important;
     min-height: auto;
+  }
+
+  /* Details Section Styling */
+
+  .details-info {
+    text-align: center;
+    margin: auto;
+  }
+
+  .details-swiper {
+    width: 400px;
+    height: auto;
+  }
+
+  .details-swiper .swiper-slide {
+    height: 100%;
+  }
+
+  .details-pagination {
+    position: relative;
+    margin: 2rem auto 0;
   }
 
   /* Portfolio Section Styling */
