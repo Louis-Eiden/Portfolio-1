@@ -520,7 +520,7 @@ body.open .hamburger .bar:last-child {
 
 .about .container::-webkit-scrollbar {
   display: none; /* For Chrome, Safari, and Opera */
-  width: 0.5em; /* Adjust the width as per your preference */
+  width: 0; /* Adjust the width as per your preference */
   background-color: transparent; /* Hide the scrollbar track */
 }
 
@@ -1654,6 +1654,10 @@ footer .social-media {
 
   .about-timeline {
     margin: 500px auto;
+  }
+
+  .timeline-swiper .swiper-wrapper {
+    max-width: 350px;
   }
 
   /* Skills Section Styling */
