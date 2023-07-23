@@ -388,6 +388,7 @@ const timelineSwiper = new Swiper(".timeline-swiper", {
 const detailsSwiper = new Swiper(".details-swiper", {
   loop: false,
   autoplay: false,
+  spaceBetween: 60, // space between slides in px
   pagination: {
     el: ".details-pagination",
     clickable: true,
