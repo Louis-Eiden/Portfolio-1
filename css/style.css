@@ -460,7 +460,7 @@ body.open .hamburger .bar:last-child {
   display: grid;
   grid-template-columns: 1fr 550px;
   height: calc(100vh - 120px);
-  height: 600px; /* for responsive */
+  /* height: 600px; for responsive */
   /* max-height: 600px; */
   align-items: center;
 }
@@ -487,7 +487,7 @@ body.open .hamburger .bar:last-child {
     var(--main-color-1),
     var(--main-color-2)
   );
-  margin-top: -120px;
+  top: -120px;
   border-radius: 0 0 80px 80px;
 }
 
@@ -508,7 +508,7 @@ body.open .hamburger .bar:last-child {
   display: grid;
   grid-template-columns: 1fr 1fr;
   overflow-y: scroll;
-  height: calc(100vh - 80px);
+  height: calc(100vh);
   scroll-snap-type: y mandatory; /* For snapping timespan */
   /* snap when scrolling */
   scroll-snap-align: end;
@@ -537,7 +537,7 @@ body.open .hamburger .bar:last-child {
   display: none;
   position: absolute;
   font-size: 4rem;
-  top: 150px;
+  top: 200px;
   left: 50%;
   transform: translateX(-50%);
   cursor: pointer;
@@ -567,9 +567,9 @@ body.open .hamburger .bar:last-child {
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  padding: 0 1rem;
+  padding: 1rem;
   /* cursor: pointer; */
-  border: 2px solid var(--bg-color-2);
+  border: 4px solid var(--bg-color-2);
   background-color: transparent;
   border-radius: 20px;
   /* snap when scrolling */
@@ -584,7 +584,7 @@ body.open .hamburger .bar:last-child {
 .line {
   position: relative;
   margin: auto;
-  width: 2px;
+  width: 4px;
   height: 100px;
   background-color: var(--bg-color-2);
   transition: var(--time-1);
@@ -1441,7 +1441,6 @@ footer .social-media {
 
   .showcase-area .container {
     grid-template-columns: 1fr 400px;
-    height: 450px;
   }
 
   /* About Section Styling */
@@ -1455,7 +1454,7 @@ footer .social-media {
   }
 
   .top-icon {
-    top: 100px;
+    top: 150px;
   }
 
   .bottom-icon {
@@ -1629,7 +1628,7 @@ footer .social-media {
     height: 100vw;
     max-height: 570px;
     max-width: 450px;
-    margin-top: 0px;
+    top: 0px;
     border-radius: 40px;
   }
 
@@ -1651,6 +1650,10 @@ footer .social-media {
   }
 
   /* About Section Styling */
+
+  .about .container {
+    scroll-snap-align: center;
+  }
 
   .about-timeline {
     margin: 500px auto;
@@ -1877,6 +1880,7 @@ footer .social-media {
 
   .timespan {
     padding: 2rem 0;
+    background-color: var(--bg-color-2);
   }
 
   .timespan-txt {
@@ -1921,7 +1925,7 @@ footer .social-media {
   }
 
   .details-swiper {
-    width: 400px;
+    width: 325px;
     height: auto;
   }
 

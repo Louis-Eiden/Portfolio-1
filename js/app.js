@@ -82,50 +82,6 @@ sr.reveal(".showcase-image", { origin: "top", delay: 700 });
 
 /* --------------- About Section --------------- */
 
-// only set overflow to scroll when the user has scrolled to the about section
-// and remove it when the user has scrolled past the about section
-
-function activeAbout() {
-  // get the about section offset top
-  const aboutOffsetTop = document.querySelector(".about").offsetTop;
-  // check if the user has scrolled to the about section
-  const scrollTop = document.documentElement.scrollTop;
-  if (scrollTop >= aboutOffsetTop) {
-    container.style.overflowY = "scroll";
-  } else {
-    container.style.overflowY = "hidden";
-  }
-  // check if the user has scrolled past the about section
-  const aboutHeight = document.querySelector(".about").offsetHeight;
-  if (scrollTop >= aboutOffsetTop + aboutHeight / 2) {
-    container.style.overflowY = "hidden";
-  }
-}
-
-activeAbout();
-
-function aboutArrows() {
-  // get the about section offset top
-  const aboutOffsetTop = document.querySelector(".about").offsetTop;
-  console.log("aboutOffsetTop", aboutOffsetTop);
-  // check if the user has scrolled to the about section
-  const scrollTop = document.documentElement.scrollTop;
-  console.log("scrollTop", scrollTop);
-  if (scrollTop >= aboutOffsetTop) {
-    topIcon.style.display = "block";
-  } else {
-    topIcon.style.display = "none";
-  }
-  // check if the user has scrolled past the about section
-  const aboutHeight = document.querySelector(".about").offsetHeight;
-  console.log("aboutHeight", aboutHeight);
-  if (scrollTop >= aboutOffsetTop + aboutHeight) {
-    bottomIcon.style.display = "block";
-  } else {
-    bottomIcon.style.display = "none";
-  }
-}
-
 container.addEventListener("scroll", function () {
   const scrollTop = container.scrollTop;
   const containerHeight = container.offsetHeight;
@@ -143,6 +99,50 @@ container.addEventListener("scroll", function () {
     bottomIcon.style.display = "none";
   }
 });
+
+// set overflow to scroll when the user has scrolled to the about section
+function activeAbout() {
+  // get the about section offset top
+  const aboutOffsetTop = document.querySelector(".about").offsetTop;
+  // check if the user has scrolled to the about section
+  const scrollTop = document.documentElement.scrollTop;
+  if (scrollTop >= aboutOffsetTop) {
+    console.log("active");
+    container.style.overflowY = "scroll";
+  } else {
+    console.log("not active");
+    container.style.overflowY = "hidden";
+  }
+  // check if the user has scrolled past the about section
+  const aboutHeight = document.querySelector(".about").offsetHeight;
+  if (scrollTop >= aboutOffsetTop + aboutHeight / 2) {
+    container.style.overflowY = "hidden";
+  }
+}
+
+activeAbout();
+
+// show the arrows when the user has scrolled to the about section
+function aboutArrows() {
+  // get the about section offset top
+  const aboutOffsetTop = document.querySelector(".about").offsetTop;
+  // check if the user has scrolled to the about section
+  const scrollTop = document.documentElement.scrollTop;
+  if (scrollTop >= aboutOffsetTop) {
+    topIcon.style.display = "block";
+  } else {
+    topIcon.style.display = "none";
+  }
+  // check if the user has scrolled past the about section
+  const aboutHeight = document.querySelector(".about").offsetHeight;
+  if (scrollTop >= aboutOffsetTop + aboutHeight) {
+    bottomIcon.style.display = "block";
+  } else {
+    bottomIcon.style.display = "none";
+  }
+}
+
+aboutArrows();
 
 /* --------------- Skills Progress Bar Animation --------------- */
 
@@ -284,7 +284,6 @@ function isElementInViewport(element) {
 // Function to remove the active class from all timespan elements
 function removeActiveClass() {
   timespans.forEach((timespan) => {
-    console.log("remove active class");
     timespan.classList.remove("active");
   });
 }
