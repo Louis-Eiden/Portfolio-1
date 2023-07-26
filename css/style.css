@@ -76,6 +76,14 @@ body.dark .form-input:hover {
   filter: brightness(110%);
 }
 
+.DE {
+  display: none;
+}
+
+.EN {
+  display: block;
+}
+
 /* --------------- General Styles --------------- */
 
 *,
@@ -171,7 +179,7 @@ ul {
 .text {
   color: var(--text-color);
   font-size: 0.9rem;
-  margin-bottom: 2rem 0;
+  margin: 2rem 0;
   line-height: 2.3;
   transition: color var(--time-1); /* for theme change */
 }
@@ -475,7 +483,7 @@ body.open .hamburger .bar:last-child {
 }
 
 .showcase-area .text {
-  margin: 0.8rem 0;
+  margin: 0.8rem 2rem 0.8rem 0;
 }
 
 .showcase-image {
@@ -566,7 +574,6 @@ body.open .hamburger .bar:last-child {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  text-align: center;
   padding: 1rem;
   /* cursor: pointer; */
   border: 4px solid var(--bg-color-2);
@@ -575,6 +582,11 @@ body.open .hamburger .bar:last-child {
   /* snap when scrolling */
   scroll-snap-align: center;
   scroll-snap-stop: always;
+}
+
+.timespan .sub-heading,
+.timespan .heading {
+  text-align: center;
 }
 
 .timespan-txt {
@@ -631,6 +643,10 @@ body.open .hamburger .bar:last-child {
 
 .about .text {
   margin: 3rem 2rem;
+}
+
+.about li {
+  list-style-type: circle;
 }
 
 .about .cta {
@@ -1466,6 +1482,10 @@ footer .social-media {
     margin-left: 2rem;
   }
 
+  .info-container {
+    padding: 0;
+  }
+
   .timeline-swiper .swiper-wrapper {
     width: 400px;
   }
@@ -1904,7 +1924,7 @@ footer .social-media {
   }
 
   .about .text {
-    margin: 2rem 1rem 0;
+    margin: 2rem 1rem 0 2rem;
   }
 
   .about-info {

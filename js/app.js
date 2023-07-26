@@ -24,7 +24,10 @@ const next_btn = document.querySelector(".next-btn");
 
 const links = document.querySelectorAll(".nav-link");
 
-const toggle_btn = document.querySelector(".toggle-btn");
+const theme_btn = document.querySelector(".theme");
+const language_btn = document.querySelector(".language");
+const english = document.querySelectorAll(".EN");
+const german = document.querySelectorAll(".DE");
 
 const hamburger = document.querySelector(".hamburger");
 
@@ -107,10 +110,8 @@ function activeAbout() {
   // check if the user has scrolled to the about section
   const scrollTop = document.documentElement.scrollTop;
   if (scrollTop >= aboutOffsetTop) {
-    console.log("active");
     container.style.overflowY = "scroll";
   } else {
-    console.log("not active");
     container.style.overflowY = "hidden";
   }
   // check if the user has scrolled past the about section
@@ -462,17 +463,54 @@ changeTheme(+firstTheme);
 function changeTheme(isDark) {
   if (isDark) {
     document.body.classList.add("dark");
-    toggle_btn.classList.replace("uil-moon", "uil-sun");
+    theme_btn.classList.replace("uil-moon", "uil-sun");
     localStorage.setItem("dark", 1);
   } else {
     document.body.classList.remove("dark");
-    toggle_btn.classList.replace("uil-sun", "uil-moon");
+    theme_btn.classList.replace("uil-sun", "uil-moon");
     localStorage.setItem("dark", 0);
   }
 }
 
-toggle_btn.addEventListener("click", () => {
+theme_btn.addEventListener("click", () => {
   changeTheme(!document.body.classList.contains("dark"));
+});
+
+/* --------------- Change Page Language --------------- */
+
+let firstLanguage = localStorage.getItem("english");
+
+changeLanguage(+firstLanguage);
+
+function changeLanguage(isEnglish) {
+  // Convert NodeList to an array using the spread operator
+  const englishElements = [...english];
+  const germanElements = [...german];
+
+  if (isEnglish) {
+    englishElements.forEach((element) => {
+      element.style.display = "block";
+    });
+    germanElements.forEach((element) => {
+      element.style.display = "none";
+    });
+    language_btn.innerHTML = "DE";
+    localStorage.setItem("english", 1);
+  } else {
+    englishElements.forEach((element) => {
+      element.style.display = "none";
+    });
+    germanElements.forEach((element) => {
+      element.style.display = "block";
+    });
+    language_btn.innerHTML = "EN";
+    localStorage.setItem("english", 0);
+  }
+}
+
+language_btn.addEventListener("click", () => {
+  console.log("clicked");
+  changeLanguage(english[0].style.display === "none");
 });
 
 /* --------------- Open & Close Navbar Menu --------------- */
