@@ -1633,7 +1633,7 @@
           </div>
           <!-- Backend Grid -->
           <div class="details-grid mix backend">
-            <div class="details-card active" data-slide-index="0">
+            <div class="details-card" data-slide-index="0">
               <h3 class="EN">Authentication and Authorization</h3>
               <h3 class="DE">Authentifizierung und Autorisierung</h3>
             </div>
@@ -1651,15 +1651,15 @@
           </div>
           <!-- Database Grid -->
           <div class="details-grid mix database">
-            <div class="details-card active" data-slide-index="3">
+            <div class="details-card" data-slide-index="0">
               <h3 class="EN">Database Design</h3>
               <h3 class="DE">Datenbankdesign</h3>
             </div>
-            <div class="details-card" data-slide-index="2">
+            <div class="details-card" data-slide-index="1">
               <h3 class="EN">Data Security and Privacy</h3>
               <h3 class="DE">Datensicherheit und Datenschutz</h3>
             </div>
-            <div class="details-card" data-slide-index="0">
+            <div class="details-card" data-slide-index="2">
               <h3 class="EN">Query Optimization</h3>
               <h3 class="DE">Abfrageoptimierung</h3>
             </div>
@@ -1670,11 +1670,11 @@
           </div>
           <!-- Server Grid -->
           <div class="details-grid mix server">
-            <div class="details-card active" data-slide-index="3">
+            <div class="details-card" data-slide-index="0">
               <h3 class="EN">Server Setup and Configuration</h3>
               <h3 class="DE">Servereinrichtung und Konfiguration</h3>
             </div>
-            <div class="details-card" data-slide-index="0">
+            <div class="details-card" data-slide-index="1">
               <h3 class="EN">Security</h3>
               <h3 class="DE">Sicherheit</h3>
             </div>
@@ -1712,10 +1712,11 @@
               </button>
             </div>
 
-            <!-- Details Swiper -->
-            <div class="swiper details-swiper">
-              <!-- Frontend Swiper -->
-              <div class="swiper-wrapper mix frontend">
+            <!-- Swiper -->
+
+            <!-- Frontend Swiper -->
+            <div class="swiper details-swiper frontend-swiper mix frontend">
+              <div class="swiper-wrapper">
                 <!-- First detail -->
                 <div class="swiper-slide">
                   <!-- EN -->
@@ -1809,9 +1810,12 @@
                   </p>
                 </div>
               </div>
+              <div class="swiper-pagination frontend-pagination"></div>
+            </div>
 
-              <!-- Backend Swiper -->
-              <div class="swiper-wrapper mix backend">
+            <!-- Backend Swiper -->
+            <div class="swiper details-swiper backend-swiper mix backend">
+              <div class="swiper-wrapper">
                 <!-- First detail -->
                 <div class="swiper-slide">
                   <!-- EN -->
@@ -1856,7 +1860,6 @@
                     werden, um eine nahtlose Benutzererfahrung zu gewährleisten.
                   </p>
                 </div>
-
                 <!-- Third detail -->
                 <div class="swiper-slide">
                   <!-- EN -->
@@ -1902,9 +1905,12 @@
                   </p>
                 </div>
               </div>
+              <div class="swiper-pagination backend-pagination"></div>
+            </div>
 
-              <!-- Database Swiper -->
-              <div class="swiper-wrapper mix database">
+            <!-- Database Swiper -->
+            <div class="swiper details-swiper database-swiper mix database">
+              <div class="swiper-wrapper">
                 <!-- First detail -->
                 <div class="swiper-slide">
                   <!-- EN -->
@@ -1942,77 +1948,148 @@
                     Hashing und Salting, um die Datenbank vor unberechtigtem
                     Zugriff zu schützen.
                   </p>
+                </div>
                 <!-- Third detail -->
                 <div class="swiper-slide">
                   <!-- EN -->
                   <p class="text EN" id="queryoptimzing">
-                    My junior web developer portfolio showcases my knowledge of <span class="details-title">Query Optimization</span>. I employ indexing, query rewriting, and other optimization techniques to enhance database query performance. By minimizing execution time and resource usage, I ensure that web applications respond swiftly and efficiently to user requests.
+                    My junior web developer portfolio showcases my knowledge of
+                    <span class="details-title">Query Optimization</span>. I
+                    employ indexing, query rewriting, and other optimization
+                    techniques to enhance database query performance. By
+                    minimizing execution time and resource usage, I ensure that
+                    web applications respond swiftly and efficiently to user
+                    requests.
                   </p>
                   <!-- DE -->
                   <p class="text DE" id="queryoptimzing">
-                    Ich analysiere und optimiere <span class="details-title">Datenbankabfragen</span>, um die Performance zu verbessern. Indem ich Indexierung und Abfrage-Optimierungen einsetze, minimiere ich die Antwortzeiten und sorge für eine reibungslose Datenverarbeitung.
+                    Ich analysiere und optimiere
+                    <span class="details-title">Datenbankabfragen</span>, um die
+                    Performance zu verbessern. Indem ich Indexierung und
+                    Abfrage-Optimierungen einsetze, minimiere ich die
+                    Antwortzeiten und sorge für eine reibungslose
+                    Datenverarbeitung.
                   </p>
+                </div>
                 <!-- Fourth detail -->
                 <div class="swiper-slide">
                   <!-- EN -->
                   <p class="text EN" id="backup">
-                    I understand the significance of regular <span class="details-title">data backups and recovery</span> strategies. Creating automated backup processes helps safeguard web application data and enables quick recovery in case of data loss or system failures.
+                    I understand the significance of regular
+                    <span class="details-title">data backups and recovery</span>
+                    strategies. Creating automated backup processes helps
+                    safeguard web application data and enables quick recovery in
+                    case of data loss or system failures.
                   </p>
                   <!-- DE -->
-                  <p class="text DE" id="backup">Ich entwickle <span class="details-title">Backup- und Wiederherstellungsstrategien</span>, um die Datenintegrität auch bei unvorhergesehenen Ereignissen zu gewährleisten. Regelmäßige Sicherungen sind ein integraler Bestandteil meiner Datenbankverwaltung.</p>
+                  <p class="text DE" id="backup">
+                    Ich entwickle
+                    <span class="details-title"
+                      >Backup- und Wiederherstellungsstrategien</span
+                    >, um die Datenintegrität auch bei unvorhergesehenen
+                    Ereignissen zu gewährleisten. Regelmäßige Sicherungen sind
+                    ein integraler Bestandteil meiner Datenbankverwaltung.
+                  </p>
                 </div>
               </div>
+              <div class="swiper-pagination database-pagination"></div>
+            </div>
 
-              <!-- Server Swiper -->
-              <div class="swiper-wrapper mix server">
+            <!-- Server Swiper -->
+            <div class="swiper details-swiper server-swiper mix server">
+              <div class="swiper-wrapper">
                 <!-- First detail -->
                 <div class="swiper-slide">
                   <!-- EN -->
                   <p class="text EN" id="serverconfig">
-                    My basic knowledge of <span class="details-title">Server Setup and Configuration</span> allows me to deploy web applications to hosting environments efficiently. Familiarity with technologies like Nginx or Apache ensures smooth server operation and optimal website performance.
+                    My basic knowledge of
+                    <span class="details-title"
+                      >Server Setup and Configuration</span
+                    >
+                    allows me to deploy web applications to hosting environments
+                    efficiently. Familiarity with technologies like Nginx or
+                    Apache ensures smooth server operation and optimal website
+                    performance.
                   </p>
                   <!-- DE -->
                   <p class="text DE" id="serverconfig">
-                    Ich richte zuverlässige Webserver ein und <span class="details-title">konfiguriere</span> sie entsprechend den Anforderungen der Anwendung. Durch die Auswahl geeigneter Hosting-Lösungen sorge ich für eine optimale Leistung und Verfügbarkeit der Webanwendung.
+                    Ich richte zuverlässige Webserver ein und
+                    <span class="details-title">konfiguriere</span> sie
+                    entsprechend den Anforderungen der Anwendung. Durch die
+                    Auswahl geeigneter Hosting-Lösungen sorge ich für eine
+                    optimale Leistung und Verfügbarkeit der Webanwendung.
                   </p>
-                </div>                                
+                </div>
                 <!-- Second detail -->
-                
+
                 <div class="swiper-slide">
                   <!-- EN -->
                   <p class="text EN" id="serversecurity">
-                    I implement measures to <span class="details-title">secure servers</span> from potential cyber threats and unauthorized access. By regularly updating software and implementing firewalls, I ensure the safety and stability of web applications.
+                    I implement measures to
+                    <span class="details-title">secure servers</span> from
+                    potential cyber threats and unauthorized access. By
+                    regularly updating software and implementing firewalls, I
+                    ensure the safety and stability of web applications.
                   </p>
                   <!-- DE -->
                   <p class="text DE" id="serversecurity">
-                    Ich implementiere bewährte <span class="details-title">Sicherheitsprotokolle und -maßnahmen</span>, um die Serverinfrastruktur vor potenziellen Bedrohungen zu schützen. Firewalls, SSL-Zertifikate und regelmäßige Updates sind Teil meiner Sicherheitsstrategie.
+                    Ich implementiere bewährte
+                    <span class="details-title"
+                      >Sicherheitsprotokolle und -maßnahmen</span
+                    >, um die Serverinfrastruktur vor potenziellen Bedrohungen
+                    zu schützen. Firewalls, SSL-Zertifikate und regelmäßige
+                    Updates sind Teil meiner Sicherheitsstrategie.
                   </p>
                 </div>
                 <!-- Third detail -->
-                                <div class="swiper-slide">
-                                  <!-- EN -->
-                                  <p class="text EN" id="usermanagement">
-                                    I can perform basic <span class="details-title">User and Access Management</span> tasks, such as creating user accounts, defining access levels, and handling authentication permissions. This ensures that users have appropriate access to web application features and data.
-                                  </p>
-                                  <!-- DE -->
-                                  <p class="text DE" id="usermanagement">
-                                    Ich richte Benutzerkonten ein und verwalte <span class="details-title">Zugriffsrechte</span>, um die Sicherheit der Anwendung zu gewährleisten. Die Kontrolle über Benutzerrollen und Berechtigungen ist entscheidend, um Daten vor unbefugtem Zugriff zu schützen.
-                                  </p>
-                                </div>
+                <div class="swiper-slide">
+                  <!-- EN -->
+                  <p class="text EN" id="usermanagement">
+                    I can perform basic
+                    <span class="details-title"
+                      >User and Access Management</span
+                    >
+                    tasks, such as creating user accounts, defining access
+                    levels, and handling authentication permissions. This
+                    ensures that users have appropriate access to web
+                    application features and data.
+                  </p>
+                  <!-- DE -->
+                  <p class="text DE" id="usermanagement">
+                    Ich richte Benutzerkonten ein und verwalte
+                    <span class="details-title">Zugriffsrechte</span>, um die
+                    Sicherheit der Anwendung zu gewährleisten. Die Kontrolle
+                    über Benutzerrollen und Berechtigungen ist entscheidend, um
+                    Daten vor unbefugtem Zugriff zu schützen.
+                  </p>
+                </div>
                 <!-- Fourth detail -->
                 <div class="swiper-slide">
                   <!-- EN -->
                   <p class="text EN" id="serverperformance">
-                    I understand the importance of <span class="details-title">Monitoring and Performance Tuning</span> in maintaining web application health. Utilizing tools like Google Analytics or server monitoring solutions helps me identify and address performance bottlenecks, ensuring a smooth and optimized user experience
+                    I understand the importance of
+                    <span class="details-title"
+                      >Monitoring and Performance Tuning</span
+                    >
+                    in maintaining web application health. Utilizing tools like
+                    Google Analytics or server monitoring solutions helps me
+                    identify and address performance bottlenecks, ensuring a
+                    smooth and optimized user experience
                   </p>
                   <!-- DE -->
                   <p class="text DE" id="serverperformance">
-                    Ich überwache die <span class="details-title">Serverleistung</span>, um Engpässe oder Flaschenhälse frühzeitig zu erkennen und zu beheben. Durch Skalierung und Optimierung der Serverressourcen trage ich dazu bei, dass die Anwendung auch bei steigender Nutzerlast effizient läuft.
+                    Ich überwache die
+                    <span class="details-title">Serverleistung</span>, um
+                    Engpässe oder Flaschenhälse frühzeitig zu erkennen und zu
+                    beheben. Durch Skalierung und Optimierung der
+                    Serverressourcen trage ich dazu bei, dass die Anwendung auch
+                    bei steigender Nutzerlast effizient läuft.
                   </p>
                 </div>
               </div>
-              <div class="swiper-pagination details-pagination"></div>
+              <div class="swiper-pagination server-pagination"></div>
             </div>
+
             <div class="cta">
               <a href="mailto:eidenlouis.mt@gmail.com" class="btn"
                 >Contact me</a

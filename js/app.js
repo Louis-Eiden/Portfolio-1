@@ -190,11 +190,11 @@ function mlCounter() {
 /* --------------- Details Filter Animation --------------- */
 let detailsMixer = mixitup(".details", {
   selectors: {
-    target: ".details-grid, .swiper-wrapper",
+    target: ".details-grid, .swiper",
     control: ".details-filter",
   },
   load: {
-    filter: ".details-grid:first-child, .swiper-wrapper:first-child",
+    filter: ".details-grid:first-child, .details-swiper:first-child",
   },
   animation: {
     enable: false,
@@ -385,36 +385,158 @@ const timelineSwiper = new Swiper(".timeline-swiper", {
   },
 });
 
-/* --------------- Details Swiper --------------- */
-const detailsSwiper = new Swiper(".details-swiper", {
+/* --------------- Frontend Swiper --------------- */
+const frontendSwiper = new Swiper(".frontend-swiper", {
   loop: false,
   autoplay: false,
   spaceBetween: 60, // space between slides in px
   pagination: {
-    el: ".details-pagination",
+    el: ".frontend-pagination",
     clickable: true,
   },
   on: {
     init: function () {
-      const detailsCards = document.querySelectorAll(".details-card");
-      detailsCards.forEach(function (card) {
+      const frontendCards = document.querySelectorAll(
+        ".frontend .details-card"
+      );
+      console.log(frontendCards);
+      frontendCards.forEach(function (card) {
         card.addEventListener("click", function () {
+          console.log("clicked");
+          console.log(card);
           let slideIndex = parseInt(card.dataset.slideIndex);
-          detailsSwiper.slideTo(slideIndex);
+          frontendSwiper.slideTo(slideIndex);
         });
       });
     },
     slideChange: function () {
-      const detailsCards = document.querySelectorAll(".details-card");
-      const activeSlideIndex = detailsSwiper.activeIndex;
+      const frontendCards = document.querySelectorAll(
+        ".frontend .details-card"
+      );
+      const activeSlideIndex = frontendSwiper.activeIndex;
 
       // Remove active class from all timespans
-      detailsCards.forEach(function (item) {
+      frontendCards.forEach(function (item) {
         item.classList.remove("active");
       });
 
       // Add active class to the corresponding timespan of the active slide
-      detailsCards[activeSlideIndex].classList.add("active");
+      frontendCards[activeSlideIndex].classList.add("active");
+    },
+  },
+});
+
+/* --------------- Backend Swiper --------------- */
+const backendSwiper = new Swiper(".backend-swiper", {
+  loop: false,
+  autoplay: false,
+  spaceBetween: 60, // space between slides in px
+  pagination: {
+    el: ".backend-pagination",
+    clickable: true,
+  },
+  on: {
+    init: function () {
+      const backendCards = document.querySelectorAll(".backend .details-card");
+      console.log(backendCards);
+      backendCards.forEach(function (card) {
+        card.addEventListener("click", function () {
+          console.log("clicked");
+          console.log(card);
+          let slideIndex = parseInt(card.dataset.slideIndex);
+          backendSwiper.slideTo(slideIndex);
+        });
+      });
+    },
+    slideChange: function () {
+      const backendCards = document.querySelectorAll(".backend .details-card");
+      const activeSlideIndex = backendSwiper.activeIndex;
+
+      // Remove active class from all timespans
+      backendCards.forEach(function (item) {
+        item.classList.remove("active");
+      });
+
+      // Add active class to the corresponding timespan of the active slide
+      backendCards[activeSlideIndex].classList.add("active");
+    },
+  },
+});
+
+/* --------------- Database Swiper --------------- */
+const databaseSwiper = new Swiper(".database-swiper", {
+  loop: false,
+  autoplay: false,
+  spaceBetween: 60, // space between slides in px
+  pagination: {
+    el: ".database-pagination",
+    clickable: true,
+  },
+  on: {
+    init: function () {
+      const databaseCards = document.querySelectorAll(
+        ".database .details-card"
+      );
+      console.log(databaseCards);
+      databaseCards.forEach(function (card) {
+        card.addEventListener("click", function () {
+          console.log("clicked");
+          console.log(card);
+          let slideIndex = parseInt(card.dataset.slideIndex);
+          databaseSwiper.slideTo(slideIndex);
+        });
+      });
+    },
+    slideChange: function () {
+      const databaseCards = document.querySelectorAll(
+        ".database .details-card"
+      );
+      const activeSlideIndex = databaseSwiper.activeIndex;
+
+      // Remove active class from all timespans
+      databaseCards.forEach(function (item) {
+        item.classList.remove("active");
+      });
+
+      // Add active class to the corresponding timespan of the active slide
+      databaseCards[activeSlideIndex].classList.add("active");
+    },
+  },
+});
+
+/* --------------- Server Swiper --------------- */
+const serverSwiper = new Swiper(".server-swiper", {
+  loop: false,
+  autoplay: false,
+  spaceBetween: 60, // space between slides in px
+  pagination: {
+    el: ".server-pagination",
+    clickable: true,
+  },
+  on: {
+    init: function () {
+      const serverCards = document.querySelectorAll(".server .details-card");
+      console.log(serverCards);
+      serverCards.forEach(function (card) {
+        card.addEventListener("click", function () {
+          console.log("clicked");
+          console.log(card);
+          let slideIndex = parseInt(card.dataset.slideIndex);
+          serverSwiper.slideTo(slideIndex);
+        });
+      });
+    },
+    slideChange: function () {
+      const serverCards = document.querySelectorAll(".server .details-card");
+      const activeSlideIndex = serverSwiper.activeIndex;
+
+      // Remove active class from all timespans
+      serverCards.forEach(function (item) {
+        item.classList.remove("active");
+      });
+
+      // Add active class to the corresponding timespan of the active slide
+      serverCards[activeSlideIndex].classList.add("active");
     },
   },
 });

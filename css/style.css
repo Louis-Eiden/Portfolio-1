@@ -893,6 +893,7 @@ body.open .hamburger .bar:last-child {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
   justify-content: center;
   cursor: pointer;
   transition: transform var(--time-2) /* for hoover */,
