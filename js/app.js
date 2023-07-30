@@ -194,7 +194,7 @@ let detailsMixer = mixitup(".details", {
     control: ".details-filter",
   },
   load: {
-    filter: ".details-grid:first-child, .details-swiper:first-child",
+    filter: ".details-grid:first-child, .frontend",
   },
   animation: {
     enable: false,
