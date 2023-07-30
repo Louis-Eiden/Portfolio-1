@@ -574,6 +574,16 @@ body.open .hamburger .bar:last-child {
   max-width: 500px;
 }
 
+.timeline-link {
+  text-decoration: underline;
+  color: var(--text-color);
+  transition: var(--transition);
+}
+
+.timeline-link:hover {
+  color: var(--heading-color);
+}
+
 .timespan {
   max-width: 450px;
   min-height: 100px;
@@ -910,6 +920,10 @@ body.open .hamburger .bar:last-child {
   transform: scale(1.1);
 }
 
+.details-card.active h3 {
+  color: var(--main-color-1);
+}
+
 .details-card.active .st2 {
   fill: var(--main-color-1);
 }
@@ -962,6 +976,10 @@ body.open .hamburger .bar:last-child {
 
 .details-card:hover {
   transform: scale(1.1);
+}
+
+.details-card:hover h3 {
+  color: var(--main-color-1);
 }
 
 .details-card:hover .st2 {
