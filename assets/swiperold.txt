@@ -1,0 +1,358 @@
+ <!-- Details Swiper -->
+            <div class="swiper details-swiper">
+              <div class="swiper-wrapper">
+                <!-- Frontend Swiper Slides -->
+                <!-- First detail -->
+                <div class="swiper-slide mix frontend">
+                  <!-- EN -->
+                  <p class="text EN" id="user-research">
+                    As a junior web developer, I possess a fundamental
+                    understanding of
+                    <span class="details-title">User Research</span>, which
+                    involves gathering valuable insights into users' needs and
+                    preferences. Conducting surveys, interviews, and usability
+                    tests enables me to empathize with users and create
+                    user-centric web experiences. By analyzing data and
+                    feedback, I can make informed design decisions to optimize
+                    user satisfaction and engagement.
+                  </p>
+                  <!-- DE -->
+                  <p class="text DE" id="user-research">
+                    Als Junior Webentwickler lege ich großen Wert auf die
+                    Bedürfnisse und Anforderungen der Benutzer. Ich führe
+                    gründliche
+                    <span class="details-title">Nutzerforschung</span> durch, um
+                    die Zielgruppe zu verstehen und eine optimale
+                    Benutzererfahrung zu gewährleisten.
+                  </p>
+                </div>
+                <!-- Second detail -->
+                <div class="swiper-slide mix frontend">
+                  <!-- EN -->
+                  <p class="text EN" id="visual-design">
+                    My basic knowledge of
+                    <span class="details-title">Visual Design</span>
+                    allows me to create visually appealing web interfaces.
+                    Understanding color theory, typography, and layout
+                    principles enables me to craft aesthetically pleasing
+                    websites that align with clients' branding and effectively
+                    communicate their message.
+                  </p>
+                  <!-- DE -->
+                  <p class="text DE" id="visual-design">
+                    Ich verbinde meine technischen Fähigkeiten mit einem
+                    ästhetischen Auge, um ansprechende und benutzerfreundliche
+                    Schnittstellen zu gestalten. Meine Erfahrung in der
+                    Farbpsychologie und dem Einsatz von Design-Tools ermöglicht
+                    es mir, attraktive
+                    <span class="details-title">visuelle Elemente</span> zu
+                    kreieren.
+                  </p>
+                </div>
+                <!-- Third detail -->
+                <div class="swiper-slide mix frontend">
+                  <!-- EN -->
+                  <p class="text EN" id="user-testing">
+                    I have a basic grasp of
+                    <span class="details-title">User Testing</span>, a crucial
+                    step in the development process. Through various testing
+                    methods like A/B testing and usability studies, I can
+                    identify usability issues and gather user feedback. This
+                    helps me refine web applications, ensuring they are
+                    intuitive and user-friendly, leading to improved overall
+                    user experience.
+                  </p>
+                  <!-- DE -->
+                  <p class="text DE" id="user-testing">
+                    Durch
+                    <span class="details-title">Nutzertests</span> validiere ich
+                    meine Frontend-Lösungen und sammle wertvolles Feedback, um
+                    kontinuierlich die Usability zu verbessern. Ich führe
+                    A/B-Tests und Prototypen-Tests durch, um fundierte
+                    Entscheidungen zu treffen und die Effektivität meiner
+                    Designs zu maximieren.
+                  </p>
+                </div>
+                <!-- Fourth detail -->
+                <div class="swiper-slide mix frontend">
+                  <!-- EN -->
+                  <p class="text EN" id="prototyping">
+                    With my basic proficiency in
+                    <span class="details-title">prototyping</span>, I can
+                    quickly transform design concepts into interactive
+                    prototypes. Utilizing tools like Adobe XD or Figma, I can
+                    demonstrate the website's flow and functionality, allowing
+                    stakeholders to visualize and provide feedback on the user
+                    experience.
+                  </p>
+                  <!-- DE -->
+                  <p class="text DE" id="prototyping">
+                    Ich entwickle interaktive
+                    <span class="details-title">Prototypen</span>, um Ideen
+                    schnell zu visualisieren und zu überprüfen. Dadurch kann ich
+                    frühzeitig Feedback einholen und effizient iterieren, um ein
+                    schlüssiges Endprodukt zu liefern.
+                  </p>
+                </div>
+                <!-- Backend Swiper Slides -->
+                <!-- fifth detail -->
+                <div class="swiper-slide mix backend">
+                  <!-- EN -->
+                  <p class="text EN" id="authentication">
+                    I have a foundational understanding of
+                    <span class="details-title"
+                      >Authentication and Authorization</span
+                    >
+                    mechanisms. Implementing secure user authentication with
+                    techniques like OAuth or JWT ensures that only authorized
+                    users can access specific web resources, enhancing the
+                    website's overall security.
+                  </p>
+                  <!-- DE -->
+                  <p class="text DE" id="authentication">
+                    Als Junior Webentwickler implementiere ich sichere
+                    <span class="details-title"
+                      >Authentifizierungs- und Autorisierungssysteme</span
+                    >, um den Zugriff auf sensible Daten und Funktionen zu
+                    kontrollieren und die Anwendung vor unberechtigtem Zugriff
+                    zu schützen.
+                  </p>
+                </div>
+                <!-- Second detail -->
+                <div class="swiper-slide mix backend">
+                  <!-- EN -->
+                  <p class="text EN" id="api">
+                    I possess basic knowledge of working with
+                    <span class="details-title">APIs</span>, allowing me to
+                    integrate third-party services and data into web
+                    applications. Familiarity with RESTful APIs and JSON format
+                    enables seamless communication between the frontend and
+                    backend, enhancing the website's functionality and user
+                    experience.
+                  </p>
+                  <!-- DE -->
+                  <p class="text DE" id="api">
+                    Ich entwickle robuste und gut dokumentierte
+                    <span class="details-title">APIs</span>, um die
+                    Kommunikation zwischen Frontend und Backend zu ermöglichen.
+                    Dadurch können Daten effizient ausgetauscht und aktualisiert
+                    werden, um eine nahtlose Benutzererfahrung zu gewährleisten.
+                  </p>
+                </div>
+                <!-- Third detail -->
+                <div class="swiper-slide mix backend">
+                  <!-- EN -->
+                  <p class="text EN" id="performance">
+                    I can optimize web application
+                    <span class="details-title">performance</span> at a basic
+                    level by employing techniques like code minification,
+                    caching, and content compression. My knowledge helps improve
+                    website loading times and responsiveness, resulting in a
+                    smoother user experience.
+                  </p>
+                  <!-- DE -->
+                  <p class="text DE" id="performance">
+                    Ich optimiere den Backend-Code, um die
+                    <span class="details-title">
+                      Leistung und Reaktionsfähigkeit</span
+                    >
+                    der Anwendung zu verbessern. Durch Caching,
+                    Datenbankindexierung und Code-Optimierungen trage ich dazu
+                    bei, dass die Anwendung schnell und effizient arbeitet.
+                  </p>
+                </div>
+                <!-- Fourth detail -->
+                <div class="swiper-slide mix backend">
+                  <!-- EN -->
+                  <p class="text EN" id="security">
+                    My foundational understanding of
+                    <span class="details-title">Security</span> principles
+                    enables me to identify and mitigate common web application
+                    vulnerabilities. By employing secure coding practices and
+                    using HTTPS, I can safeguard sensitive user data and protect
+                    websites from potential cyber threats.
+                  </p>
+                  <!-- DE -->
+                  <p class="text DE" id="security">
+                    Ich setze
+                    <span class="details-title">Sicherheitsmaßnahmen</span> wie
+                    Verschlüsselung und Validierung ein, um Angriffe und
+                    Datenlecks zu verhindern. Ich halte mich stets über aktuelle
+                    Sicherheitsstandards auf dem Laufenden und implementiere
+                    bewährte Verfahren, um die Anwendung vor Bedrohungen zu
+                    schützen.
+                  </p>
+                </div>
+
+                <!-- Database Swiper Slide -->
+                <!-- First detail -->
+                <div class="swiper-slide mix database">
+                  <!-- EN -->
+                  <p class="text EN" id="databasedesign">
+                    I possess a basic understanding of
+                    <span class="details-title">Database Design</span>, allowing
+                    me to design efficient database schemas. By normalizing data
+                    and optimizing queries, I can ensure smooth data retrieval
+                    and storage for web applications.
+                  </p>
+                  <!-- DE -->
+                  <p class="text DE" id="databasedesign">
+                    Ich entwerfe und implementiere gut
+                    <span class="details-title">strukturierte Datenbanken</span
+                    >, die den Anforderungen der Anwendung entsprechen. Durch
+                    die Verwendung geeigneter Datenbankmodelle und Beziehungen
+                    gewährleiste ich die effiziente Speicherung und Verwaltung
+                    von Informationen.
+                  </p>
+                </div>
+                <!-- Second detail -->
+                <div class="swiper-slide mix database">
+                  <!-- EN -->
+                  <p class="text EN" id="databasesecurity">
+                    I can implement basic
+                    <span class="details-title">Database Security</span>
+                    measures to protect sensitive user data. By employing
+                    techniques like hashing and salting, I can safeguard
+                    databases from potential cyber threats.
+                  </p>
+                  <!-- DE -->
+                  <p class="text DE" id="databasesecurity">
+                    Ich implementiere grundlegende
+                    <span class="details-title">Sicherheitsmaßnahmen</span> wie
+                    Hashing und Salting, um die Datenbank vor unberechtigtem
+                    Zugriff zu schützen.
+                  </p>
+                </div>
+                <!-- Third detail -->
+                <div class="swiper-slide mix database">
+                  <!-- EN -->
+                  <p class="text EN" id="queryoptimzing">
+                    My junior web developer portfolio showcases my knowledge of
+                    <span class="details-title">Query Optimization</span>. I
+                    employ indexing, query rewriting, and other optimization
+                    techniques to enhance database query performance. By
+                    minimizing execution time and resource usage, I ensure that
+                    web applications respond swiftly and efficiently to user
+                    requests.
+                  </p>
+                  <!-- DE -->
+                  <p class="text DE" id="queryoptimzing">
+                    Ich analysiere und optimiere
+                    <span class="details-title">Datenbankabfragen</span>, um die
+                    Performance zu verbessern. Indem ich Indexierung und
+                    Abfrage-Optimierungen einsetze, minimiere ich die
+                    Antwortzeiten und sorge für eine reibungslose
+                    Datenverarbeitung.
+                  </p>
+                </div>
+                <!-- Fourth detail -->
+                <div class="swiper-slide mix database">
+                  <!-- EN -->
+                  <p class="text EN" id="backup">
+                    I understand the significance of regular
+                    <span class="details-title">data backups and recovery</span>
+                    strategies. Creating automated backup processes helps
+                    safeguard web application data and enables quick recovery in
+                    case of data loss or system failures.
+                  </p>
+                  <!-- DE -->
+                  <p class="text DE" id="backup">
+                    Ich entwickle
+                    <span class="details-title"
+                      >Backup- und Wiederherstellungsstrategien</span
+                    >, um die Datenintegrität auch bei unvorhergesehenen
+                    Ereignissen zu gewährleisten. Regelmäßige Sicherungen sind
+                    ein integraler Bestandteil meiner Datenbankverwaltung.
+                  </p>
+                </div>
+
+                <!-- Server Swiper Slide -->
+                <!-- First detail -->
+                <div class="swiper-slide mix server">
+                  <!-- EN -->
+                  <p class="text EN" id="serverconfig">
+                    My basic knowledge of
+                    <span class="details-title"
+                      >Server Setup and Configuration</span
+                    >
+                    allows me to deploy web applications to hosting environments
+                    efficiently. Familiarity with technologies like Nginx or
+                    Apache ensures smooth server operation and optimal website
+                    performance.
+                  </p>
+                  <!-- DE -->
+                  <p class="text DE" id="serverconfig">
+                    Ich richte zuverlässige Webserver ein und
+                    <span class="details-title">konfiguriere</span> sie
+                    entsprechend den Anforderungen der Anwendung. Durch die
+                    Auswahl geeigneter Hosting-Lösungen sorge ich für eine
+                    optimale Leistung und Verfügbarkeit der Webanwendung.
+                  </p>
+                </div>
+                <!-- Second detail -->
+
+                <div class="swiper-slide mix server">
+                  <!-- EN -->
+                  <p class="text EN" id="serversecurity">
+                    I implement measures to
+                    <span class="details-title">secure servers</span> from
+                    potential cyber threats and unauthorized access. By
+                    regularly updating software and implementing firewalls, I
+                    ensure the safety and stability of web applications.
+                  </p>
+                  <!-- DE -->
+                  <p class="text DE" id="serversecurity">
+                    Ich implementiere bewährte
+                    <span class="details-title"
+                      >Sicherheitsprotokolle und -maßnahmen</span
+                    >, um die Serverinfrastruktur vor potenziellen Bedrohungen
+                    zu schützen. Firewalls, SSL-Zertifikate und regelmäßige
+                    Updates sind Teil meiner Sicherheitsstrategie.
+                  </p>
+                </div>
+                <!-- Third detail -->
+                <div class="swiper-slide mix server">
+                  <!-- EN -->
+                  <p class="text EN" id="usermanagement">
+                    I can perform basic
+                    <span class="details-title"
+                      >User and Access Management</span
+                    >
+                    tasks, such as creating user accounts, defining access
+                    levels, and handling authentication permissions. This
+                    ensures that users have appropriate access to web
+                    application features and data.
+                  </p>
+                  <!-- DE -->
+                  <p class="text DE" id="usermanagement">
+                    Ich richte Benutzerkonten ein und verwalte
+                    <span class="details-title">Zugriffsrechte</span>, um die
+                    Sicherheit der Anwendung zu gewährleisten. Die Kontrolle
+                    über Benutzerrollen und Berechtigungen ist entscheidend, um
+                    Daten vor unbefugtem Zugriff zu schützen.
+                  </p>
+                </div>
+                <!-- Fourth detail -->
+                <div class="swiper-slide mix server">
+                  <!-- EN -->
+                  <p class="text EN" id="serverperformance">
+                    I understand the importance of
+                    <span class="details-title"
+                      >Monitoring and Performance Tuning</span
+                    >
+                    in maintaining web application health. Utilizing tools like
+                    Google Analytics or server monitoring solutions helps me
+                    identify and address performance bottlenecks, ensuring a
+                    smooth and optimized user experience
+                  </p>
+                  <!-- DE -->
+                  <p class="text DE" id="serverperformance">
+                    Ich überwache die
+                    <span class="details-title">Serverleistung</span>, um
+                    Engpässe oder Flaschenhälse frühzeitig zu erkennen und zu
+                    beheben. Durch Skalierung und Optimierung der
+                    Serverressourcen trage ich dazu bei, dass die Anwendung auch
+                    bei steigender Nutzerlast effizient läuft.
+                  </p>
+                </div>
+              </div>
