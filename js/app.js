@@ -1,27 +1,8 @@
 /* --------------- Grab elements from DOM --------------- */
 
+/* Navbar */
 const header = document.querySelector("header");
 const navbar = document.querySelector(".navbar");
-
-const container = document.querySelector(".about .container");
-const content = container.children[0];
-const topIcon = document.querySelector(".top-icon");
-const bottomIcon = document.querySelector(".bottom-icon");
-
-const first_skill = document.querySelector(".skill:first-child");
-const sk_counter = document.querySelectorAll(".counter span");
-const progress_bars = document.querySelectorAll(".skills svg circle");
-
-const ml_section = document.querySelector(".milestones");
-const ml_counters = document.querySelectorAll(".number span");
-
-const prt_section = document.querySelector(".portfolio");
-const zoom_icons = document.querySelectorAll(".zoom-icon");
-const modal_overlay = document.querySelector(".modal-overlay");
-const images = document.querySelectorAll(".images img");
-const prev_btn = document.querySelector(".prev-btn");
-const next_btn = document.querySelector(".next-btn");
-
 const links = document.querySelectorAll(".nav-link");
 
 const theme_btn = document.querySelector(".theme");
@@ -30,6 +11,31 @@ const english = document.querySelectorAll(".EN");
 const german = document.querySelectorAll(".DE");
 
 const hamburger = document.querySelector(".hamburger");
+
+/* About Section */
+const container = document.querySelector(".about .container");
+const content = container.children[0];
+const topIcon = document.querySelector(".top-icon");
+const bottomIcon = document.querySelector(".bottom-icon");
+const tinyhouseIcon = document.querySelectorAll(".tinyhouse-icon");
+const tinyhouseImages = document.querySelectorAll(".tinyhouse-img");
+
+/* Skill Section */
+const first_skill = document.querySelector(".skill:first-child");
+const sk_counter = document.querySelectorAll(".counter span");
+const progress_bars = document.querySelectorAll(".skills svg circle");
+
+/* Services Section */
+const ml_section = document.querySelector(".milestones");
+const ml_counters = document.querySelectorAll(".number span");
+
+/* Portfolio Section */
+const prt_section = document.querySelector(".portfolio");
+const zoom_icons = document.querySelectorAll(".zoom-icon");
+const modal_overlay = document.querySelector(".modal-overlay");
+const images = document.querySelectorAll(".images img");
+const prev_btn = document.querySelector(".prev-btn");
+const next_btn = document.querySelector(".next-btn");
 
 /* --------------- Event Listeners --------------- */
 
@@ -41,28 +47,6 @@ window.addEventListener("scroll", () => {
   if (!mlPlayed) mlCounter();
 });
 
-/* --------------- Utils --------------- */
-
-// Check if element has reached the bottom of the viewport
-function hasReached(el) {
-  let topPosition = el.getBoundingClientRect().top;
-
-  if (window.innerHeight >= topPosition + el.offsetHeight) return true;
-  return false;
-}
-
-// Update the counter by 1 until it reaches the target number
-function updateCount(num, maxNum) {
-  let currentNum = +num.innerText;
-
-  if (currentNum < maxNum) {
-    num.innerText = currentNum + 1;
-    setTimeout(() => {
-      updateCount(num, maxNum);
-    }, 12);
-  }
-}
-
 /* --------------- Sticky Navbar --------------- */
 
 function stickyNavbar() {
@@ -73,7 +57,7 @@ stickyNavbar();
 
 window.addEventListener("scroll", stickyNavbar);
 
-/* --------------- Reveal Animation --------------- */
+/* --------------- Showcase Section Reveal Animation --------------- */
 
 let sr = ScrollReveal({
   duration: 2500,
@@ -147,6 +131,26 @@ aboutArrows();
 
 /* --------------- Skills Progress Bar Animation --------------- */
 
+// Check if element has reached the bottom of the viewport
+function hasReached(el) {
+  let topPosition = el.getBoundingClientRect().top;
+
+  if (window.innerHeight >= topPosition + el.offsetHeight) return true;
+  return false;
+}
+
+// Update the counter by 1 until it reaches the target number
+function updateCount(num, maxNum) {
+  let currentNum = +num.innerText;
+
+  if (currentNum < maxNum) {
+    num.innerText = currentNum + 1;
+    setTimeout(() => {
+      updateCount(num, maxNum);
+    }, 12);
+  }
+}
+
 let skillsPlayed = false;
 
 // Animate the progress bar
@@ -213,11 +217,24 @@ let portfolioMixer = mixitup(".portfolio-gallery", {
   },
 });
 
-/* --------------- Modal Slideshow Animation --------------- */
+/* --------------- Portfolio Modal Slideshow Animation --------------- */
 
 let currentIndex = 0;
 let currentPort = "";
 let portImages = [];
+
+// open modal for Tinyhouse project
+tinyhouseIcon.forEach((icon, i) =>
+icon.addEventListener("click", () => {
+  console.log("clicked");
+  prt_section.classList.add("open");
+  document.body.classList.add("stopScrolling");
+  currentPort = "tinyhouse";
+  console.log(currentPort);
+
+  changeImage(currentPort, currentIndex);
+})
+);
 
 // open modal
 zoom_icons.forEach((icon, i) =>

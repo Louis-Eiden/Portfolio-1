@@ -578,6 +578,7 @@ body.open .hamburger .bar:last-child {
   text-decoration: underline;
   color: var(--text-color);
   transition: var(--transition);
+  cursor: pointer;
 }
 
 .timeline-link:hover {
@@ -1421,6 +1422,12 @@ footer .social-media {
 .social-link:hover {
   background-color: var(--main-color-1);
   /* color: var(--main-color-1); */
+}
+
+.figma svg {
+  stroke: var(--text-color);
+  stroke-width: 2.5;
+  scale: 0.75;
 }
 
 /* --------------- 1000px Screens --------------- */
