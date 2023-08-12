@@ -212,6 +212,9 @@ let portfolioMixer = mixitup(".portfolio-gallery", {
     target: ".prt-card",
     control: ".portfolio-filter",
   },
+  load: {
+    filter: ".fav",
+  },
   animation: {
     duration: 500,
   },
