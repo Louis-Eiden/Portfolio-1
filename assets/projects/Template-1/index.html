@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <title>Template-1</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: "Times New Roman", Georgia, Serif;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: "Playfair Display";
+      letter-spacing: 5px;
+    }
+  </style>
+  <body>
+    <!-- Navbar (sit on top) -->
+    <div class="top">
+      <div class="nav-bar">
+        <a href="index.html" class="bar-item">Template-1</a>
+        <!-- Right-sided navbar. Hide them on small screens -->
+        <div class="nav-bar-right">
+          <a href="#about" class="bar-item">About</a>
+          <a href="Galerie.html" class="bar-item">Galerie</a>
+          <a href="Ausstellungen.html" class="bar-item">Ausstellungen</a>
+          <a href="#contact" class="bar-item">Contact</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header style="max-width: 1600px; min-width: 500px" id="home">
+      <img src="./images/Baumwurzeln.jpg" />
+      <div class="header-caption">
+        <h1>Vincent Van Gogh</h1>
+      </div>
+    </header>
+
+    <!-- Page content -->
+    <main>
+      <!-- About Section -->
+      <div class="about-box" id="about">
+        <div class="img-box">
+          <img src="./images/van-gogh-la-terrasse.jpg" alt="" />
+        </div>
+
+        <div class="text-box">
+          <h1>About Vincent Van Gogh</h1>
+          <br />
+          <h5>(1853 - 1890)</h5>
+          <p>
+            Der Maler Vincent van Gogh (1853 - 1890) kennt heute jedes Kind -
+            nicht nur wegen seiner Bilder, sondern vor allem aufgrund seiner
+            dramatischen und bedauernswerten Biografie. Zu Lebzeiten verschmäht
+            und verachtet, gehört er heute - auch aufgrund des Kunstmarktes, der
+            seine Bilder zu schwindelerregenden Summen handelt - zu den
+            bekanntesten Künstler überhaupt. Die wilde, leidenschaftliche
+            Malerei eines van Gogh wäre ohne Ölfarben aus der Tube kaum denkbar.
+            Van Gogh leutet mit seinen Bilder die Moderne in der Kunst ein.
+          </p>
+          <p>
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+            officia deserunt mollit anim id est laborum consectetur adipiscing
+            elit, sed do eiusmod temporincididunt ut labore et dolore magna
+            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+            laboris nisi ut aliquip ex ea commodo consequat.
+          </p>
+        </div>
+      </div>
+
+      <hr />
+
+      <!-- Contact Section -->
+      <div class="contact" id="contact">
+        <h1>Contact</h1>
+        <br />
+        <p>bei interess an Kunstwerken oder Austellungsanfragen</p>
+        <p class="">
+          <b
+            >Musterfirma, <br />
+            Musterstraße 1, 68159 Musterstadt
+          </b>
+        </p>
+        <p>
+          You can also contact us by phone 00553123-2323 or email
+          Musterfirma@email.com, or you can send us a message here:
+        </p>
+        <form action="/action_page.php" target="_blank">
+          <p>
+            <input type="text" placeholder="Name" required name="Name" />
+          </p>
+          <p>
+            <input
+              type="number"
+              placeholder="How many people"
+              required
+              name="People"
+            />
+          </p>
+          <p>
+            <input
+              type="datetime-local"
+              placeholder="Date and time"
+              required
+              name="date"
+              value="2020-11-16T20:00"
+            />
+          </p>
+          <p>
+            <input
+              type="text"
+              placeholder="Message \ Special requirements"
+              required
+              name="Message"
+            />
+          </p>
+          <p>
+            <button class="button" type="submit">SEND MESSAGE</button>
+          </p>
+        </form>
+      </div>
+
+      <!-- End page content -->
+    </main>
+
+    <!-- Footer -->
+    <footer class="w3-center w3-light-grey w3-padding-32"></footer>
+  </body>
+</html>
