@@ -1039,6 +1039,14 @@ body.open .hamburger .bar:last-child {
   transition: background-color var(--time-1); /* for theme change */
 }
 
+.prt-details {
+  height: 500px;
+  width: 750px;
+  padding: 1.1rem 1.6rem;
+  display: flex;
+  align-items: center;
+}
+
 .prt-image {
   position: relative;
   overflow: hidden;
@@ -1833,6 +1841,11 @@ footer .social-media {
     padding-bottom: 0;
   }
 
+  .prt-details {
+    height: 350px;
+    width: 500px;
+  }
+
   /* Testimonials Section Styling */
   .testimonials {
     padding: var(--section-padding) 0;
@@ -2028,6 +2041,11 @@ footer .social-media {
   .portfolio .slider-wrap {
     width: calc(100% - 2rem);
     grid-template-columns: 50px 1fr 50px;
+  }
+
+  .prt-details {
+    height: 350px;
+    width: 350px;
   }
 
   .images {
